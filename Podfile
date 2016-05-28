@@ -1,0 +1,5 @@
+pod 'Firebase', '~>3.2.0'
+pod 'FirebaseAuth', '~> 3.0.2'
+pod 'FirebaseDatabase'
+pod 'JSQMessagesViewController'
+pod 'IDMPhotoBrowser'
