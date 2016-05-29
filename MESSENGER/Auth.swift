@@ -12,7 +12,7 @@ import FirebaseDatabase
 class auth : UIViewController {
     
     var firebase = FIRDatabase.database().reference()
-    //
+    
     var backendless = Backendless.sharedInstance()
     
     var newUser: BackendlessUser?
