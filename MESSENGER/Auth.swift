@@ -219,7 +219,9 @@ class auth : UIViewController {
                     
                 }
                 
-                if fullNameTextField != "" && emailTextField != "" && passwordTextField != "" && emailTextField?.characters.indexOf("@") != nil && emailTextField?.characters.indexOf(".") != nil && emailTextField?.rangeOfString(".com") == nil {
+                if fullNameTextField != "" && emailTextField != "" && passwordTextField != "" && emailTextField?.characters.indexOf("@") != nil && emailTextField?.characters.indexOf(".") != nil {
+                    
+                    //&& emailTextField?.rangeOfString(".com") == nil
                     
                     self.email = emailTextField
                     self.fullName = fullNameTextField

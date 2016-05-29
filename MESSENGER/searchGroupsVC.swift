@@ -8,7 +8,7 @@
 
 import Foundation
 
-class searchGroupsVC: UITableViewController {
+class searchGroupsVC: UIViewController {
     
     var createGroupAlert : UIAlertController?
     var passwordAlert : UIAlertController?
@@ -25,9 +25,8 @@ class searchGroupsVC: UITableViewController {
     @IBAction func doneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     @IBAction func createButton(sender: AnyObject) {
-        self.presentViewController(self.passwordAlert!, animated: true, completion: nil)
+        self.presentViewController(self.createGroupAlert!, animated: true, completion: nil)
     }
     
     func getMainPart2(s: String) -> String {
@@ -46,7 +45,7 @@ class searchGroupsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createGroupAlert = UIAlertController(title: "New Group", message: "Give your group a unique name.", preferredStyle: .Alert)
+        createGroupAlert = UIAlertController(title: "New Group", message: "Give your group a unique name", preferredStyle: .Alert)
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) -> Void in
             print("Cancel button was pressed")
         }

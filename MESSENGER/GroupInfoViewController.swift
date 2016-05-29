@@ -8,12 +8,13 @@
 
 import Foundation
 
-class GroupInfoViewController : UITableViewController {
+class GroupInfoViewController : UIViewController {
     
-    @IBAction func option(sender: AnyObject) {
+    @IBAction func optionButton(sender: AnyObject) {
+        
+        //if currentUser is member present leaveGroup(), if currentUser is creator present adminOptions(),
         
         joinGroup()
-        
     }
     
     func joinGroup() {
