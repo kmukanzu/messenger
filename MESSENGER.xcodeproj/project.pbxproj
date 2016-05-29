@@ -90,6 +90,7 @@
 		A24FEAF61CFB7B640037944D /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24FEAF31CFB7B640037944D /* more@2x.png */; };
 		A24FEAF71CFB7B640037944D /* more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24FEAF41CFB7B640037944D /* more@3x.png */; };
 		A24FEAF91CFB7D590037944D /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */; };
+		A24FEAFB1CFB91E10037944D /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24FEAFA1CFB91E10037944D /* Auth.swift */; };
 		A25195471CAB039A0011EE5B /* profileImage50.png in Resources */ = {isa = PBXBuildFile; fileRef = A25195461CAB039A0011EE5B /* profileImage50.png */; };
 		A25195491CAB039E0011EE5B /* profileImage50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A25195481CAB039E0011EE5B /* profileImage50@2x.png */; };
 		A251954D1CAB0EBB0011EE5B /* profileImage30.png in Resources */ = {isa = PBXBuildFile; fileRef = A251954C1CAB0EBB0011EE5B /* profileImage30.png */; };
@@ -259,6 +260,7 @@
 		A24FEAF31CFB7B640037944D /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		A24FEAF41CFB7B640037944D /* more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@3x.png"; sourceTree = "<group>"; };
 		A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
+		A24FEAFA1CFB91E10037944D /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		A25195461CAB039A0011EE5B /* profileImage50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage50.png; sourceTree = "<group>"; };
 		A25195481CAB039E0011EE5B /* profileImage50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileImage50@2x.png"; sourceTree = "<group>"; };
 		A251954C1CAB0EBB0011EE5B /* profileImage30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage30.png; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				A2B3A0521C96571700A4BB27 /* AppDelegate.swift */,
 				A2B3A05B1C96571700A4BB27 /* LaunchScreen.storyboard */,
 				A2F1EC411CC61C6300DFF571 /* Main.storyboard */,
+				A24FEAFA1CFB91E10037944D /* Auth.swift */,
 				A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */,
 				A23917271CF6A6D40048470A /* searchGroupsVC.swift */,
 				A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */,
@@ -1392,6 +1395,7 @@
 				A2B3A0671C9658C700A4BB27 /* SWRevealViewController.m in Sources */,
 				A27429051CF38DCC0056A196 /* Camera.swift in Sources */,
 				A249223D1CF553A9003D1923 /* BackTableViewVC.swift in Sources */,
+				A24FEAFB1CFB91E10037944D /* Auth.swift in Sources */,
 				A20393D71CF25F250057C70A /* Recent.swift in Sources */,
 				A23917261CF6A2B40048470A /* FilesCollectionViewController.swift in Sources */,
 				A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */,
