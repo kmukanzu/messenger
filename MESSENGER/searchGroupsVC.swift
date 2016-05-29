@@ -11,18 +11,23 @@ import Foundation
 class searchGroupsVC: UITableViewController {
     
     var createGroupAlert : UIAlertController?
+    var passwordAlert : UIAlertController?
     
     var groupName = String()
     var groupPassword = String()
     var universityID = String()
     var creator = String()
+    var password = String()
+    
+    // IN DIDSELECT ROW AT INDEX PATH
+    // IF groupPassWord =! nil, present passwordAlert
     
     @IBAction func doneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func createButton(sender: AnyObject) {
-        self.presentViewController(self.createGroupAlert!, animated: true, completion: nil)
+        self.presentViewController(self.passwordAlert!, animated: true, completion: nil)
     }
     
     func getMainPart2(s: String) -> String {
@@ -89,16 +94,46 @@ class searchGroupsVC: UITableViewController {
         }
         
         createGroupAlert?.addAction(alertActionForTextFields)
+        
+        passwordAlert = UIAlertController(title: "Peassword", message: "Enter group password", preferredStyle: .Alert)
+        let cancelbutton = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) -> Void in
+            print("Cancel button was pressed")
+        }
+        self.passwordAlert?.addAction(cancelbutton)
+        
+        passwordAlert?.addTextFieldWithConfigurationHandler({ (textfield) -> Void in
+            textfield.placeholder = "Password"
+            textfield.text = ""
+            textfield.secureTextEntry = true
+        })
+        
+        let alertActionForTextFieldss = UIAlertAction(title: "Next", style: .Default) { (action) -> Void in
+            
+            if let textFields = self.passwordAlert?.textFields {
+                let theTextFields = textFields as [UITextField]
+                
+                let passwordTextField = theTextFields[0].text
+                print("\(passwordTextField)")
+                
+                self.password = passwordTextField!
+                
+                if passwordTextField != "" {
+                    
+                    // Check Firebase if password = groupPassword
+                    
+                }
+                
+            }
+            
+        }
+        
+        passwordAlert?.addAction(alertActionForTextFieldss)
     }
     
     func createGroup () {
     
-        firebase.child("Universities").child(self.universityID).child("Groups").childByAutoId().setValue(["groupName": self.groupName, "groupPassword" : self.groupPassword, "groupCreator": self.creator])
+        firebase.child("Groups").child(self.universityID).childByAutoId().setValue(["groupName": self.groupName, "groupPassword" : self.groupPassword, "groupCreator": self.creator, "universityID" : self.universityID])
     
     }
-    
-    
-    
-    
     
 }

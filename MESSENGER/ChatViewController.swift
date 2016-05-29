@@ -13,6 +13,8 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     let ref = firebase.child("Message")
     //Firebase(url: "https://umessengerapp.firebaseio.com//Message")
     
+    var profileImage = UIImage?.self
+    
     var messages: [JSQMessage] = []
     var objects: [NSDictionary] = []
     var loaded: [NSDictionary] = []
@@ -38,6 +40,11 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         super.viewDidLoad()
         
         //self.title = recent!["withUserUsername"] as? String
+        
+        let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem
+        
         
         self.senderId = backendless.userService
         .currentUser.objectId

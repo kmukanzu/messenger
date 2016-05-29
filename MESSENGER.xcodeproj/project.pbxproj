@@ -86,6 +86,10 @@
 		A23917871CF7C1280048470A /* invite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23917841CF7C1280048470A /* invite@2x.png */; };
 		A23917881CF7C1280048470A /* invite@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23917851CF7C1280048470A /* invite@3x.png */; };
 		A249223D1CF553A9003D1923 /* BackTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249223C1CF553A9003D1923 /* BackTableViewVC.swift */; };
+		A24FEAF51CFB7B640037944D /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = A24FEAF21CFB7B640037944D /* more.png */; };
+		A24FEAF61CFB7B640037944D /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24FEAF31CFB7B640037944D /* more@2x.png */; };
+		A24FEAF71CFB7B640037944D /* more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24FEAF41CFB7B640037944D /* more@3x.png */; };
+		A24FEAF91CFB7D590037944D /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */; };
 		A25195471CAB039A0011EE5B /* profileImage50.png in Resources */ = {isa = PBXBuildFile; fileRef = A25195461CAB039A0011EE5B /* profileImage50.png */; };
 		A25195491CAB039E0011EE5B /* profileImage50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A25195481CAB039E0011EE5B /* profileImage50@2x.png */; };
 		A251954D1CAB0EBB0011EE5B /* profileImage30.png in Resources */ = {isa = PBXBuildFile; fileRef = A251954C1CAB0EBB0011EE5B /* profileImage30.png */; };
@@ -146,7 +150,6 @@
 		A2F04BE21CA1AF7B009CBE43 /* compose.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F04BE11CA1AF7B009CBE43 /* compose.png */; };
 		A2F04BE41CA1AF80009CBE43 /* compose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F04BE31CA1AF80009CBE43 /* compose@2x.png */; };
 		A2F1EC421CC61C6300DFF571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F1EC411CC61C6300DFF571 /* Main.storyboard */; };
-		A2F1EC4E1CC61FC200DFF571 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1EC4D1CC61FC200DFF571 /* Auth.swift */; };
 		A2F1EC521CC698FF00DFF571 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F1EC4F1CC698FF00DFF571 /* favorite.png */; };
 		A2F1EC531CC698FF00DFF571 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F1EC501CC698FF00DFF571 /* favorite@2x.png */; };
 		A2F1EC541CC698FF00DFF571 /* favorite@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F1EC511CC698FF00DFF571 /* favorite@3x.png */; };
@@ -252,6 +255,10 @@
 		A23917841CF7C1280048470A /* invite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invite@2x.png"; sourceTree = "<group>"; };
 		A23917851CF7C1280048470A /* invite@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invite@3x.png"; sourceTree = "<group>"; };
 		A249223C1CF553A9003D1923 /* BackTableViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableViewVC.swift; sourceTree = "<group>"; };
+		A24FEAF21CFB7B640037944D /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		A24FEAF31CFB7B640037944D /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		A24FEAF41CFB7B640037944D /* more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@3x.png"; sourceTree = "<group>"; };
+		A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
 		A25195461CAB039A0011EE5B /* profileImage50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage50.png; sourceTree = "<group>"; };
 		A25195481CAB039E0011EE5B /* profileImage50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileImage50@2x.png"; sourceTree = "<group>"; };
 		A251954C1CAB0EBB0011EE5B /* profileImage30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage30.png; sourceTree = "<group>"; };
@@ -316,7 +323,6 @@
 		A2F04BE11CA1AF7B009CBE43 /* compose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compose.png; sourceTree = "<group>"; };
 		A2F04BE31CA1AF80009CBE43 /* compose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose@2x.png"; sourceTree = "<group>"; };
 		A2F1EC411CC61C6300DFF571 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A2F1EC4D1CC61FC200DFF571 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		A2F1EC4F1CC698FF00DFF571 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		A2F1EC501CC698FF00DFF571 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
 		A2F1EC511CC698FF00DFF571 /* favorite@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@3x.png"; sourceTree = "<group>"; };
@@ -568,6 +574,9 @@
 		A2A5A8941CB4C6E100B1CBEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A24FEAF21CFB7B640037944D /* more.png */,
+				A24FEAF31CFB7B640037944D /* more@2x.png */,
+				A24FEAF41CFB7B640037944D /* more@3x.png */,
 				A23917831CF7C1280048470A /* invite.png */,
 				A23917841CF7C1280048470A /* invite@2x.png */,
 				A23917851CF7C1280048470A /* invite@3x.png */,
@@ -713,9 +722,9 @@
 			children = (
 				A2A5A8941CB4C6E100B1CBEC /* Images */,
 				A2B3A0521C96571700A4BB27 /* AppDelegate.swift */,
-				A2F1EC4D1CC61FC200DFF571 /* Auth.swift */,
 				A2B3A05B1C96571700A4BB27 /* LaunchScreen.storyboard */,
 				A2F1EC411CC61C6300DFF571 /* Main.storyboard */,
+				A24FEAF81CFB7D590037944D /* GroupInfoViewController.swift */,
 				A23917271CF6A6D40048470A /* searchGroupsVC.swift */,
 				A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */,
 				A27429001CF2C16A0056A196 /* IncomingMessage.swift */,
@@ -1268,6 +1277,7 @@
 				A20419851C9FB0DE0090C677 /* qwert.png in Resources */,
 				A23916F11CF634280048470A /* chat@2x.png in Resources */,
 				A23916D91CF60FF00048470A /* list@2x.png in Resources */,
+				A24FEAF71CFB7B640037944D /* more@3x.png in Resources */,
 				A23916E01CF610C60048470A /* lists@3x.png in Resources */,
 				A2DE01121CB9B75200065BCE /* nav.png in Resources */,
 				A256CD4B1CC6182D00B1F5A4 /* favorites@3x.png in Resources */,
@@ -1275,11 +1285,13 @@
 				A23916DA1CF60FF00048470A /* list@3x.png in Resources */,
 				A229E0A21C99D8AC00DB418F /* set.png in Resources */,
 				A229E0B21C99E27500DB418F /* two-round-overlapping-speech-bubbles.png in Resources */,
+				A24FEAF61CFB7B640037944D /* more@2x.png in Resources */,
 				A229E0981C99D89200DB418F /* central-alignment.png in Resources */,
 				A2F1EC421CC61C6300DFF571 /* Main.storyboard in Resources */,
 				A23917031CF636000048470A /* collections@2x.png in Resources */,
 				A256CD0B1CC6039F00B1F5A4 /* group@2x.png in Resources */,
 				A229E0A41C99D8B800DB418F /* set@2x.png in Resources */,
+				A24FEAF51CFB7B640037944D /* more.png in Resources */,
 				A23917811CF7BC7B0048470A /* other@2x.png in Resources */,
 				A256CD011CC5FD8B00B1F5A4 /* message.png in Resources */,
 				A256CD121CC6059A00B1F5A4 /* groups@2x.png in Resources */,
@@ -1386,8 +1398,8 @@
 				A29D8F981CF8924200A4AC65 /* TermsAndPrivacy.swift in Sources */,
 				A27428FD1CF288280056A196 /* ChatViewController.swift in Sources */,
 				A2C03D5E1CF93EAF0061551C /* GroupsViewController.swift in Sources */,
-				A2F1EC4E1CC61FC200DFF571 /* Auth.swift in Sources */,
 				A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */,
+				A24FEAF91CFB7D590037944D /* GroupInfoViewController.swift in Sources */,
 				A239172C1CF76A650048470A /* Avatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
