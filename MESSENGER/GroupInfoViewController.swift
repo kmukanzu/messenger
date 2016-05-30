@@ -61,7 +61,7 @@ class GroupInfoViewController : UIViewController {
         
         let leaveAction = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
-        let name = UIAlertAction(title: "Edit Name", style: .Destructive) { (Alert:UIAlertAction) -> Void in
+        let name = UIAlertAction(title: "Delete Group", style: .Destructive) { (Alert:UIAlertAction) -> Void in
             print("leave button was pressed")
         }
         

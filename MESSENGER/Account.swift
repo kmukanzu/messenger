@@ -41,12 +41,25 @@ class Account: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             print("SignOut")
+            logOut()
+            
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
+            self.presentViewController(homeVC, animated: false, completion: nil)
+            
         }
         
         if indexPath.section == 0 && indexPath.row == 1 {
             print("DeleteAccount")
+            // Delete user from backendless
+            // Delete user from firebase
+            // 
         }
         
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func logOut() {
+    
+        backendless.userService.logout()
     }
 }

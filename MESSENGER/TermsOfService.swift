@@ -21,4 +21,5 @@ class TermsOfService: UIViewController {
         
         webView.loadRequest(NSURLRequest(URL: url!))
     }
+
 }
