@@ -131,7 +131,7 @@ class searchGroupsVC: UIViewController {
     
     func createGroup () {
     
-        firebase.child("Groups").child(self.universityID).childByAutoId().setValue(["groupName": self.groupName, "groupPassword" : self.groupPassword, "groupCreator": self.creator])
+        firebase.child("Groups").child(self.universityID).childByAutoId().setValue(["groupName": self.groupName, "groupPassword" : self.groupPassword, "groupCreator": backendless.userService.currentUser.email])
     
     }
     

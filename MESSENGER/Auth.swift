@@ -219,9 +219,7 @@ class auth : UIViewController {
                     
                 }
                 
-                if fullNameTextField != "" && emailTextField != "" && passwordTextField != "" && emailTextField?.characters.indexOf("@") != nil && emailTextField?.characters.indexOf(".") != nil {
-                    
-                    //&& emailTextField?.rangeOfString(".com") == nil
+                if fullNameTextField != "" && emailTextField != "" && passwordTextField != "" && emailTextField?.characters.indexOf("@") != nil && emailTextField?.characters.indexOf(".") != nil && emailTextField?.rangeOfString(".com") == nil {
                     
                     self.email = emailTextField
                     self.fullName = fullNameTextField
@@ -280,14 +278,14 @@ class auth : UIViewController {
             
             self.presentViewController(self.emailVerificationAlert!, animated: true, completion: nil)
             
-            /*if let range = email.rangeOfString("@") {
+            if let range = email.rangeOfString("@") {
             
             self.userName = email.substringToIndex(range.startIndex)
             print(self.userName)
             
-            }*/
+            }
             
-            /*self.firebase.child("Universities").child(self.userUniversityID).child("Users").child(self.userName).setValue(["fullName": self.userFullName, "userEmail" : self.userEmail])*/
+            self.firebase.child("Users").child(self.userUniversityID).child(self.userName).setValue(["fullName": self.userFullName, "userEmail" : self.userEmail])
             
             }) { (fault : Fault!) -> Void in
                 print("\(fault)")
@@ -300,7 +298,7 @@ class auth : UIViewController {
         
         backendless.userService.login(email, password: password, response: { (user:BackendlessUser!) -> Void in
             
-            self.firebase.child("Users").child(self.userUniversityID).child(self.backendless.userService.currentUser.objectId).setValue(["fullName": self.backendless.userService.currentUser.name, "userEmail" : self.backendless.userService.currentUser.email])
+            /*self.firebase.child("Users").child(self.userUniversityID).child(self.backendless.userService.currentUser.objectId).setValue(["fullName": self.backendless.userService.currentUser.name, "userEmail" : self.backendless.userService.currentUser.email])*/
             
             self.performSegueWithIdentifier("goToMain", sender: self)
             
