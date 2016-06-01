@@ -1,20 +1,27 @@
 //
 //  Recent.swift
-//  MESSENGER
+//  quickChat
 //
-//  Created by Kayamba Mukanzu on 5/22/16.
-//  Copyright © 2016 Kayamba Mukanzu. All rights reserved.
+//  Created by David Kababyan on 06/03/2016.
+//  Copyright © 2016 David Kababyan. All rights reserved.
 //
 
 import Foundation
-import Firebase
 import FirebaseDatabase
 
-//let firebase = Firebase(url: "https://umessengerapp.firebaseio.com/")
-let backendless = Backendless.sharedInstance()
-//let currentUser = backendless.userService.currentUser
+//------Constants--------\\
+public let kAVATARSTATE = "avatarState"
+public let kFIRSTRUN = "firstRun"
+//--------\\
 
+
+
+//let firebase = Firebase(url: "https://quickchataplication.firebaseio.com/")
 var firebase = FIRDatabase.database().reference()
+let backendless = Backendless.sharedInstance()
+
+
+//MARK: Create Chatroom
 
 func startChat(user1: BackendlessUser, user2: BackendlessUser) -> String {
     
@@ -41,12 +48,14 @@ func startChat(user1: BackendlessUser, user2: BackendlessUser) -> String {
     return chatRoomId
 }
 
+//MARK: Create RecentItem
+
 func CreateRecent(userId: String, chatRoomID: String, members: [String], withUserUsername: String, withUseruserId: String) {
     
+    //change
     firebase.child("Recent").queryOrderedByChild("chatRoomID").queryEqualToValue(chatRoomID).observeSingleEventOfType(.Value, withBlock:{
         snapshot in
         
-
         var createRecent = true
         
         //check if we have a result
@@ -66,6 +75,7 @@ func CreateRecent(userId: String, chatRoomID: String, members: [String], withUse
         }
     })
 }
+
 
 func CreateRecentItem(userId: String, chatRoomID: String, members: [String], withUserUsername: String, withUserUserId: String) {
     
@@ -110,6 +120,7 @@ func UpdateRecentItem(recent: NSDictionary, lastMessage: String) {
     
     let values = ["lastMessage" : lastMessage, "counter" : counter, "date" : date]
     
+    //change
     firebase.child("Recent").child((recent["recentId"] as? String)!).updateChildValues(values as [NSObject : AnyObject], withCompletionBlock: {
         (error, ref) -> Void in
         
@@ -131,6 +142,7 @@ func RestartRecentChat(recent: NSDictionary) {
         }
     }
 }
+
 
 //MARK: Delete Recent functions
 
@@ -166,6 +178,9 @@ func ClearRecentCounterItem(recent: NSDictionary) {
         }
     }
 }
+
+
+//MARK: Helper functions
 
 private let dateFormat = "yyyyMMddHHmmss"
 

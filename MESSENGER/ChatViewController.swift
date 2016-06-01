@@ -41,9 +41,9 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         
         //self.title = recent!["withUserUsername"] as? String
         
-        let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        /*let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem*/
         
         
         self.senderId = backendless.userService
@@ -294,10 +294,12 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         
         var outgoingMessage = OutgoingMessage?()
         
+        //if text message
         if let text = text {
             outgoingMessage = OutgoingMessage(message: text, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Delivered", type: "text")
         }
         
+        //send picture message
         if let pic = picture {
             
             let imageData = UIImageJPEGRepresentation(pic, 1.0)
@@ -305,11 +307,13 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
             outgoingMessage = OutgoingMessage(message: "Picture", pictureData: imageData!, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Delivered", type: "picture")
         }
         
+        
+        //play message sent sound
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         self.finishSendingMessage()
         
-         outgoingMessage!.sendMessage(chatRoomId, item: outgoingMessage!.messageDictionary)
         
+        outgoingMessage!.sendMessage(chatRoomId, item: outgoingMessage!.messageDictionary)
     }
     
     func loadmessages() {

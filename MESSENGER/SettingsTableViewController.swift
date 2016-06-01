@@ -10,6 +10,10 @@ import Foundation
 
 class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBAction func doneButton(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBOutlet weak var avatarImageView: UIImageView!
     
@@ -37,12 +41,14 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.tabBarController?.tabBar.hidden = false
+        self.tabBarController?.tabBar.hidden = true
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.hidden = true
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2
         avatarImageView.layer.masksToBounds = true

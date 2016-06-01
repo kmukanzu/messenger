@@ -125,6 +125,10 @@
 		A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */; };
 		A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27429001CF2C16A0056A196 /* IncomingMessage.swift */; };
 		A27429051CF38DCC0056A196 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27429041CF38DCC0056A196 /* Camera.swift */; };
+		A29898081CFE3A21003D9F8A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898071CFE3A21003D9F8A /* Welcome.swift */; };
+		A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898091CFE3BCD003D9F8A /* SignInAccount.swift */; };
+		A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */; };
+		A298980E1CFE6B52003D9F8A /* chatImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A298980D1CFE6B52003D9F8A /* chatImage.png */; };
 		A29D0C651CAA07D30072A92A /* icondefault.gif in Resources */ = {isa = PBXBuildFile; fileRef = A29D0C641CAA07D30072A92A /* icondefault.gif */; };
 		A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */; };
 		A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */; };
@@ -294,6 +298,10 @@
 		A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		A27429001CF2C16A0056A196 /* IncomingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		A27429041CF38DCC0056A196 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		A29898071CFE3A21003D9F8A /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		A29898091CFE3BCD003D9F8A /* SignInAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAccount.swift; sourceTree = "<group>"; };
+		A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		A298980D1CFE6B52003D9F8A /* chatImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatImage.png; sourceTree = "<group>"; };
 		A29D0C641CAA07D30072A92A /* icondefault.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icondefault.gif; sourceTree = "<group>"; };
 		A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -604,6 +612,7 @@
 		A2A5A8941CB4C6E100B1CBEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A298980D1CFE6B52003D9F8A /* chatImage.png */,
 				A24FEAF21CFB7B640037944D /* more.png */,
 				A24FEAF31CFB7B640037944D /* more@2x.png */,
 				A24FEAF41CFB7B640037944D /* more@3x.png */,
@@ -754,6 +763,9 @@
 				A2B3A0521C96571700A4BB27 /* AppDelegate.swift */,
 				A24FEAFA1CFB91E10037944D /* Auth.swift */,
 				A2F1EC411CC61C6300DFF571 /* Main.storyboard */,
+				A29898071CFE3A21003D9F8A /* Welcome.swift */,
+				A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */,
+				A29898091CFE3BCD003D9F8A /* SignInAccount.swift */,
 				A23917251CF6A2B40048470A /* FilesCollectionViewController.swift */,
 				A24FEAFD1CFBA9E00037944D /* Message */,
 				A29D8F921CF88F0A00A4AC65 /* Groups */,
@@ -1214,6 +1226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25195591CAB7EAB0011EE5B /* image80@2x.png in Resources */,
+				A298980E1CFE6B52003D9F8A /* chatImage.png in Resources */,
 				A23917871CF7C1280048470A /* invite@2x.png in Resources */,
 				A229E0941C99D88800DB418F /* favor.png in Resources */,
 				A25496171C9E3C8F00046824 /* team.png in Resources */,
@@ -1397,9 +1410,12 @@
 			files = (
 				A239172E1CF7898C0048470A /* TermsOfService.swift in Sources */,
 				A29D8F961CF8920600A4AC65 /* Account.swift in Sources */,
+				A29898081CFE3A21003D9F8A /* Welcome.swift in Sources */,
+				A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */,
 				A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */,
 				A20393D31CF258820057C70A /* RecentTableViewCell.swift in Sources */,
 				A20393D51CF259610057C70A /* RecentViewController.swift in Sources */,
+				A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */,
 				A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */,
 				A2B3A0531C96571700A4BB27 /* AppDelegate.swift in Sources */,
 				A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */,

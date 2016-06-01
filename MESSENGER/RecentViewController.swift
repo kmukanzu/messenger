@@ -10,6 +10,10 @@ import Foundation
 
 class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChooseUserDelegate {
     
+    @IBAction func menuButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToSettings", sender: self)
+        
+    }
     @IBOutlet weak var tableView: UITableView!
     
     var recents : [NSDictionary] = []
@@ -123,7 +127,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(animated: Bool) {
         
-        self.tabBarController?.tabBar.hidden = false
+        self.tabBarController?.tabBar.hidden = true
         
     }
     
@@ -154,5 +158,26 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             self.tableView.reloadData()
         })
+    }
+    
+    func edit() {
+        
+        
+        //self.tabBarController?.tabBar.hidden = true
+        
+        let actionAlert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let editSettings = UIAlertAction(title: "Settings", style: .Default) { (Alert:UIAlertAction) -> Void in
+            self.performSegueWithIdentifier("goToSettings", sender: self)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (Alert:UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        actionAlert.addAction(editSettings)
+        actionAlert.addAction(cancel)
+        
+        self.presentViewController(actionAlert, animated: true, completion: nil)
+        
     }
 }
