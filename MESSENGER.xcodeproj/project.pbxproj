@@ -129,6 +129,9 @@
 		A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898091CFE3BCD003D9F8A /* SignInAccount.swift */; };
 		A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */; };
 		A298980E1CFE6B52003D9F8A /* chatImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A298980D1CFE6B52003D9F8A /* chatImage.png */; };
+		A298981A1CFE9A17003D9F8A /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898171CFE9A17003D9F8A /* cancel.png */; };
+		A298981B1CFE9A17003D9F8A /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898181CFE9A17003D9F8A /* cancel@2x.png */; };
+		A298981C1CFE9A17003D9F8A /* cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898191CFE9A17003D9F8A /* cancel@3x.png */; };
 		A29D0C651CAA07D30072A92A /* icondefault.gif in Resources */ = {isa = PBXBuildFile; fileRef = A29D0C641CAA07D30072A92A /* icondefault.gif */; };
 		A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */; };
 		A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */; };
@@ -302,6 +305,9 @@
 		A29898091CFE3BCD003D9F8A /* SignInAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAccount.swift; sourceTree = "<group>"; };
 		A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		A298980D1CFE6B52003D9F8A /* chatImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatImage.png; sourceTree = "<group>"; };
+		A29898171CFE9A17003D9F8A /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		A29898181CFE9A17003D9F8A /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		A29898191CFE9A17003D9F8A /* cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@3x.png"; sourceTree = "<group>"; };
 		A29D0C641CAA07D30072A92A /* icondefault.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icondefault.gif; sourceTree = "<group>"; };
 		A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -612,6 +618,9 @@
 		A2A5A8941CB4C6E100B1CBEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A29898171CFE9A17003D9F8A /* cancel.png */,
+				A29898181CFE9A17003D9F8A /* cancel@2x.png */,
+				A29898191CFE9A17003D9F8A /* cancel@3x.png */,
 				A298980D1CFE6B52003D9F8A /* chatImage.png */,
 				A24FEAF21CFB7B640037944D /* more.png */,
 				A24FEAF31CFB7B640037944D /* more@2x.png */,
@@ -1266,6 +1275,7 @@
 				A25195671CABBD650011EE5B /* image40@2x.png in Resources */,
 				A23917681CF7AC020048470A /* report.png in Resources */,
 				A251955F1CAB866F0011EE5B /* image30.png in Resources */,
+				A298981B1CFE9A17003D9F8A /* cancel@2x.png in Resources */,
 				A2BF1CAC1C9BCFCB00B8E841 /* amandabarnes@2x.png in Resources */,
 				A23917761CF7B1270048470A /* information@3x.png in Resources */,
 				A2DE01141CB9B75600065BCE /* nav@2x.png in Resources */,
@@ -1276,6 +1286,7 @@
 				A239170F1CF644420048470A /* profileImage40@2x.png in Resources */,
 				A25195531CAB7CA00011EE5B /* image60.png in Resources */,
 				A2BF1CC21C9C69FC00B8E841 /* editImage1.png in Resources */,
+				A298981A1CFE9A17003D9F8A /* cancel.png in Resources */,
 				A229E09C1C99D89C00DB418F /* profileImage@2x.png in Resources */,
 				A251955D1CAB7FCE0011EE5B /* image50@2x.png in Resources */,
 				A23917691CF7AC020048470A /* report@2x.png in Resources */,
@@ -1304,6 +1315,7 @@
 				A23917201CF686200048470A /* setting@2x.png in Resources */,
 				A2BF1CA81C9BC34B00B8E841 /* navigation@2x.png in Resources */,
 				A20419851C9FB0DE0090C677 /* qwert.png in Resources */,
+				A298981C1CFE9A17003D9F8A /* cancel@3x.png in Resources */,
 				A23916F11CF634280048470A /* chat@2x.png in Resources */,
 				A23916D91CF60FF00048470A /* list@2x.png in Resources */,
 				A24FEAF71CFB7B640037944D /* more@3x.png in Resources */,

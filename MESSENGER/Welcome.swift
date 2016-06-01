@@ -27,6 +27,8 @@ class Welcome : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().statusBarHidden = true
+        
         createAccountButton.layer.cornerRadius = 8
         //createAccountButton.layer.masksToBounds = false
         createAccountButton.layer.masksToBounds = true

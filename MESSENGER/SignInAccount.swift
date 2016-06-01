@@ -10,15 +10,26 @@ import Foundation
 
 class SignInAccount : UIViewController {
     
-    @IBOutlet weak var signInView: UIView!
-    @IBAction func dismissSignInAccount(sender: AnyObject) {
-        
+    @IBAction func dismissButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInOutlet: UIButton!
+    @IBAction func signInButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func forgotPasswordButton(sender: AnyObject) {
+    }
+    
     override func viewDidLoad() {
-        signInView.layer.cornerRadius = 8
-        signInView.layer.masksToBounds = true
-        signInView.layer.borderWidth = 1
+        super.viewDidLoad()
+        
+        self.emailTextField .becomeFirstResponder()
+        signInOutlet.layer.cornerRadius = 8
+        signInOutlet.layer.masksToBounds = true
+        UIApplication.sharedApplication().statusBarHidden = true
     }
 }

@@ -211,7 +211,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         if showAvatars {
             
             print("showAvatar")
-            collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSizeMake(30, 30)
+            collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
             collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
             
             //download avatars
