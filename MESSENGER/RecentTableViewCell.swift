@@ -32,7 +32,7 @@ class RecentTableViewCell: UITableViewCell {
         counterView.layer.cornerRadius = counterView.frame.size.width/2
         counterView.layer.masksToBounds = true
         
-        self.avatarImageView.image = UIImage(named: "image40.png")
+        self.avatarImageView.image = UIImage(named: "")
         
         let withUserId = (recent.objectForKey("withUserUserId") as? String)!
         

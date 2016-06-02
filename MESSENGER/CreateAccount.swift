@@ -42,12 +42,34 @@ class CreateAccount : UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBOutlet weak var passwordOutlet: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var createAccountOutlet: UIButton!
     
     @IBAction func createAccountAction(sender: AnyObject) {
+        
+        if emailTextField.text != "" && fullNameTextField.text != "" && passwordTextField.text != "" && emailTextField.text?.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text?.rangeOfString(".com") == nil {
+            
+            self.email = emailTextField.text
+            self.fullName = fullNameTextField.text
+            self.password = passwordTextField.text
+            
+            self.userEmail = emailTextField.text!
+            self.userFullName = fullNameTextField.text!
+            
+            let university = self.getMainPart2(emailTextField.text!)
+            let dotEdu = self.getMainPart1(emailTextField.text!)
+            self.userUniversityID = university + dotEdu
+            
+            self.register(self.email!, fullName: self.fullName!, password: self.password!, universityID: self.userUniversityID, avatarImage: self.avatarImage)
+        
+        } else {
+        
+            //signUpErrorAlert()
+            
+        }
         
     }
     
@@ -72,22 +94,9 @@ class CreateAccount : UIViewController {
         createAccountOutlet.layer.masksToBounds = true
         UIApplication.sharedApplication().statusBarHidden = true
         
-        newUser = BackendlessUser()
-        
-        signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
-        let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in
-            print("Ok button was pressed")
-            
-        }
-        
-        signUpError?.addAction(button)
-        
-        
-        
-        
     }
     
-    func resister(email: String, fullName: String, password: String, universityID: String, avatarImage: UIImage?){
+    func register(email: String, fullName: String, password: String, universityID: String, avatarImage: UIImage?){
         
         if avatarImage == nil {
             newUser?.setProperty("Avatar", object: "")
@@ -100,21 +109,23 @@ class CreateAccount : UIViewController {
         
         backendless.userService.registering(newUser, response: { (registeredUser : BackendlessUser!) -> Void in
             
-            self.presentViewController(self.emailVerificationAlert!, animated: true, completion: nil)
-            
-            if let range = email.rangeOfString("@") {
-                
-                self.userName = email.substringToIndex(range.startIndex)
-                print(self.userName)
-                
-            }
-            
-            /*firebase.child("Users").child(self.userUniversityID).child(self.userName).setValue(["fullName": self.userFullName, "userEmail" : self.userEmail])*/
+            //self.presentViewController(self.emailVerificationAlert!, animated: true, completion: nil)
             
             }) { (fault : Fault!) -> Void in
                 print("\(fault)")
                 
-                self.presentViewController(self.signUpError!, animated: true, completion: nil)
+                //self.presentViewController(self.signUpError!, animated: true, completion: nil)
         }
+    }
+    
+    func signUpErrorAlert() {
+    
+        signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
+        let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in
+            print("Ok button was pressed")
+            
+        }
+        signUpError?.addAction(button)
+    
     }
 }
