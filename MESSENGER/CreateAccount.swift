@@ -89,10 +89,10 @@ class CreateAccount : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fullNameTextField .becomeFirstResponder()
+        /*self.fullNameTextField .becomeFirstResponder()
         createAccountOutlet.layer.cornerRadius = 8
         createAccountOutlet.layer.masksToBounds = true
-        UIApplication.sharedApplication().statusBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true*/
         
     }
     

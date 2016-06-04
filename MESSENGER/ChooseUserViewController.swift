@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ChooseUserDelegate {
+/*protocol ChooseUserDelegate {
     
     func CreateChatroom(withUser: BackendlessUser)
 }
@@ -81,4 +81,4 @@ class ChooseUserViewController: UIViewController, UITableViewDataSource, UITable
                 print("Error, couldnt retrive users: \(fault)")
         }
     }
-}
+}*/

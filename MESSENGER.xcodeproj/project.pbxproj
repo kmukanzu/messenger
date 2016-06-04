@@ -132,6 +132,9 @@
 		A298981A1CFE9A17003D9F8A /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898171CFE9A17003D9F8A /* cancel.png */; };
 		A298981B1CFE9A17003D9F8A /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898181CFE9A17003D9F8A /* cancel@2x.png */; };
 		A298981C1CFE9A17003D9F8A /* cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29898191CFE9A17003D9F8A /* cancel@3x.png */; };
+		A298981E1D012A12003D9F8A /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298981D1D012A12003D9F8A /* MessagesTableViewController.swift */; };
+		A29898201D0131C9003D9F8A /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298981F1D0131C9003D9F8A /* MessagesTableViewCell.swift */; };
+		A29898221D013A9A003D9F8A /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898211D013A9A003D9F8A /* SearchUserViewController.swift */; };
 		A29D0C651CAA07D30072A92A /* icondefault.gif in Resources */ = {isa = PBXBuildFile; fileRef = A29D0C641CAA07D30072A92A /* icondefault.gif */; };
 		A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */; };
 		A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */; };
@@ -308,6 +311,9 @@
 		A29898171CFE9A17003D9F8A /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		A29898181CFE9A17003D9F8A /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
 		A29898191CFE9A17003D9F8A /* cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@3x.png"; sourceTree = "<group>"; };
+		A298981D1D012A12003D9F8A /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		A298981F1D0131C9003D9F8A /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		A29898211D013A9A003D9F8A /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		A29D0C641CAA07D30072A92A /* icondefault.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icondefault.gif; sourceTree = "<group>"; };
 		A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -573,10 +579,13 @@
 			isa = PBXGroup;
 			children = (
 				A20393D41CF259610057C70A /* RecentViewController.swift */,
+				A298981D1D012A12003D9F8A /* MessagesTableViewController.swift */,
+				A298981F1D0131C9003D9F8A /* MessagesTableViewCell.swift */,
 				A27428FC1CF288280056A196 /* ChatViewController.swift */,
 				A27429001CF2C16A0056A196 /* IncomingMessage.swift */,
 				A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */,
 				A27428F81CF274270056A196 /* ChooseUserViewController.swift */,
+				A29898211D013A9A003D9F8A /* SearchUserViewController.swift */,
 				A20393D21CF258820057C70A /* RecentTableViewCell.swift */,
 			);
 			name = Message;
@@ -1427,6 +1436,8 @@
 				A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */,
 				A20393D31CF258820057C70A /* RecentTableViewCell.swift in Sources */,
 				A20393D51CF259610057C70A /* RecentViewController.swift in Sources */,
+				A29898201D0131C9003D9F8A /* MessagesTableViewCell.swift in Sources */,
+				A298981E1D012A12003D9F8A /* MessagesTableViewController.swift in Sources */,
 				A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */,
 				A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */,
 				A2B3A0531C96571700A4BB27 /* AppDelegate.swift in Sources */,
@@ -1435,6 +1446,7 @@
 				A27428FB1CF27D730056A196 /* SettingsTableViewController.swift in Sources */,
 				A2B3A0671C9658C700A4BB27 /* SWRevealViewController.m in Sources */,
 				A27429051CF38DCC0056A196 /* Camera.swift in Sources */,
+				A29898221D013A9A003D9F8A /* SearchUserViewController.swift in Sources */,
 				A24FEAFB1CFB91E10037944D /* Auth.swift in Sources */,
 				A20393D71CF25F250057C70A /* Recent.swift in Sources */,
 				A23917261CF6A2B40048470A /* FilesCollectionViewController.swift in Sources */,

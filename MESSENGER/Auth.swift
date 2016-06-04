@@ -297,7 +297,7 @@ class auth : UIViewController {
         
         backendless.userService.login(email, password: password, response: { (user:BackendlessUser!) -> Void in
             
-            self.performSegueWithIdentifier("goToMain", sender: self)
+            self.performSegueWithIdentifier("goToMessages", sender: self)
             
             }) { (fault:Fault!) -> Void in
                 print("\(fault)")
@@ -314,7 +314,7 @@ class auth : UIViewController {
         
         if currentUser != nil {
             
-            self.performSegueWithIdentifier("goToMain", sender: self)
+            self.performSegueWithIdentifier("goToMessages", sender: self)
             
         } else {
             

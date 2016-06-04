@@ -26,6 +26,6 @@ class SupportViewController : UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews();
         
-        webView.scrollView.contentInset = UIEdgeInsetsZero;
+        //webView.scrollView.contentInset = UIEdgeInsetsZero;
     }
 }

@@ -1,48 +1,25 @@
 //
-//  RecentViewController.swift
+//  MessagesTableViewController.swift
 //  MESSENGER
 //
-//  Created by Kayamba Mukanzu on 5/22/16.
+//  Created by Kayamba Mukanzu on 6/2/16.
 //  Copyright © 2016 Kayamba Mukanzu. All rights reserved.
 //
 
 import Foundation
 
-/*class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChooseUserDelegate {
-    
-    @IBAction func menuButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("goToSettings", sender: self)
-        
-    }
-    @IBOutlet weak var tableView: UITableView!
+class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     
     var recents : [NSDictionary] = []
     
-    @IBAction func startNewChatBarButtonItem(sender: AnyObject) {
+    @IBAction func moreButton(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("recentToChooseUserVC", sender: self)
-        
+        self.performSegueWithIdentifier("messagesToSettings", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    @IBAction func newMessage(sender: AnyObject) {
         
-        if segue.identifier == "recentToChooseUserVC" {
-            let vc = segue.destinationViewController as! ChooseUserViewController
-            vc.delegate = self
-            
-        }
-        
-        if segue.identifier == "recentToChatSeg" {
-            let indexPath = sender as! NSIndexPath
-            let chatVC =  segue.destinationViewController as! ChatViewController
-            
-            let recent = recents[indexPath.row]
-            
-            chatVC.recent = recent
-            
-            chatVC.chatRoomId = recent["chatRoomID"] as? String
-            
-        }
+        self.performSegueWithIdentifier("messagesToSearchUser", sender: self)
     }
     
     func CreateChatroom(withUser: BackendlessUser) {
@@ -56,21 +33,42 @@ import Foundation
         chatVC.chatRoomId = startChat(backendless.userService.currentUser, user2: withUser)
         
     }
-
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "messagesToSearchUser" {
+            let vc = segue.destinationViewController as! UINavigationController
+            let DestVc = vc.topViewController as! SearchUserViewController
+            DestVc.delegate = self
+            
+        }
+        
+        if segue.identifier == "messageToChat" {
+            let indexPath = sender as! NSIndexPath
+            let chatVC =  segue.destinationViewController as! ChatViewController
+            
+            let recent = recents[indexPath.row]
+            
+            chatVC.recent = recent
+            
+            chatVC.chatRoomId = recent["chatRoomID"] as? String
+            
+        }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return recents.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RecentTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MessagesTableViewCell
         
         let recent = recents[indexPath.row]
         
@@ -80,7 +78,7 @@ import Foundation
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -88,15 +86,16 @@ import Foundation
         
         RestartRecentChat(recent)
         
-        performSegueWithIdentifier("recentToChatSeg", sender: indexPath)
+        performSegueWithIdentifier("messageToChat",
+            sender: indexPath)
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let recent = recents[indexPath.row]
         
@@ -151,7 +150,7 @@ import Foundation
                     firebase.child("Recent").queryOrderedByChild("chatRoomID").queryEqualToValue(recent["chatRoomID"]).observeEventType(.Value, withBlock: {
                         snapshot in
                     })
-
+                    
                 }
                 
             }
@@ -180,4 +179,4 @@ import Foundation
         self.presentViewController(actionAlert, animated: true, completion: nil)
         
     }
-}*/
+}
