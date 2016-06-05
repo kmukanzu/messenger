@@ -25,6 +25,8 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     var showAvatars: Bool = true
     var firstLoad: Bool?
     
+    var navTitle = ""
+    
     var initialLoadComlete: Bool = false
     
     var withUser: BackendlessUser?
@@ -39,7 +41,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.title = recent!["withUserUsername"] as? String
+        //self.title = navTitle
         
         /*let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
@@ -54,11 +56,12 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         
         if withUser?.objectId == nil {
-            getWithUserFromRecent(recent!, result: { (withUser) in
-                self.withUser = withUser
-                self.title = withUser.name
-                self.getAvatars()
-            })
+            //getWithUserFromRecent(recent!, result: { (withUser) in
+                //self.withUser = withUser
+                self.title = navTitle
+                //self.getAvatars()
+            //})
+            
         } else {
             self.title = withUser!.name
             self.getAvatars()

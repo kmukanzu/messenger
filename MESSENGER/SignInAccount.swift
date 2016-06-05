@@ -14,6 +14,10 @@ class SignInAccount : UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    
+    
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInOutlet: UIButton!
@@ -27,9 +31,9 @@ class SignInAccount : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.emailTextField .becomeFirstResponder()
+        /*self.emailTextField .becomeFirstResponder()
         signInOutlet.layer.cornerRadius = 8
         signInOutlet.layer.masksToBounds = true
-        UIApplication.sharedApplication().statusBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true*/
     }
 }

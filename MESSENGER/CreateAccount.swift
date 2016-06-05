@@ -38,14 +38,9 @@ class CreateAccount : UIViewController {
     var passwordHasReset : UIAlertController?
     var signUpError : UIAlertController?
     
-    @IBAction func dismissCreateAccount(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createAccountOutlet: UIButton!
     
     @IBAction func createAccountAction(sender: AnyObject) {
@@ -64,10 +59,10 @@ class CreateAccount : UIViewController {
             self.userUniversityID = university + dotEdu
             
             self.register(self.email!, fullName: self.fullName!, password: self.password!, universityID: self.userUniversityID, avatarImage: self.avatarImage)
-        
+            
         } else {
-        
-            //signUpErrorAlert()
+            
+            signUpErrorAlert()
             
         }
         
@@ -89,10 +84,9 @@ class CreateAccount : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*self.fullNameTextField .becomeFirstResponder()
+        self.fullNameTextField .becomeFirstResponder()
         createAccountOutlet.layer.cornerRadius = 8
         createAccountOutlet.layer.masksToBounds = true
-        UIApplication.sharedApplication().statusBarHidden = true*/
         
     }
     
@@ -125,6 +119,7 @@ class CreateAccount : UIViewController {
             print("Ok button was pressed")
             
         }
+        
         signUpError?.addAction(button)
     
     }

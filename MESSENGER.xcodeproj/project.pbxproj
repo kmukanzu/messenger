@@ -125,7 +125,6 @@
 		A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */; };
 		A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27429001CF2C16A0056A196 /* IncomingMessage.swift */; };
 		A27429051CF38DCC0056A196 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27429041CF38DCC0056A196 /* Camera.swift */; };
-		A29898081CFE3A21003D9F8A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898071CFE3A21003D9F8A /* Welcome.swift */; };
 		A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898091CFE3BCD003D9F8A /* SignInAccount.swift */; };
 		A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */; };
 		A298980E1CFE6B52003D9F8A /* chatImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A298980D1CFE6B52003D9F8A /* chatImage.png */; };
@@ -135,6 +134,7 @@
 		A298981E1D012A12003D9F8A /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298981D1D012A12003D9F8A /* MessagesTableViewController.swift */; };
 		A29898201D0131C9003D9F8A /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A298981F1D0131C9003D9F8A /* MessagesTableViewCell.swift */; };
 		A29898221D013A9A003D9F8A /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898211D013A9A003D9F8A /* SearchUserViewController.swift */; };
+		A29898241D0311C4003D9F8A /* AgreeTermsPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29898231D0311C4003D9F8A /* AgreeTermsPrivacy.swift */; };
 		A29D0C651CAA07D30072A92A /* icondefault.gif in Resources */ = {isa = PBXBuildFile; fileRef = A29D0C641CAA07D30072A92A /* icondefault.gif */; };
 		A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */; };
 		A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */; };
@@ -304,7 +304,6 @@
 		A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		A27429001CF2C16A0056A196 /* IncomingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		A27429041CF38DCC0056A196 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		A29898071CFE3A21003D9F8A /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		A29898091CFE3BCD003D9F8A /* SignInAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAccount.swift; sourceTree = "<group>"; };
 		A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		A298980D1CFE6B52003D9F8A /* chatImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatImage.png; sourceTree = "<group>"; };
@@ -314,6 +313,7 @@
 		A298981D1D012A12003D9F8A /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		A298981F1D0131C9003D9F8A /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		A29898211D013A9A003D9F8A /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		A29898231D0311C4003D9F8A /* AgreeTermsPrivacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreeTermsPrivacy.swift; sourceTree = "<group>"; };
 		A29D0C641CAA07D30072A92A /* icondefault.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icondefault.gif; sourceTree = "<group>"; };
 		A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -781,8 +781,8 @@
 				A2B3A0521C96571700A4BB27 /* AppDelegate.swift */,
 				A24FEAFA1CFB91E10037944D /* Auth.swift */,
 				A2F1EC411CC61C6300DFF571 /* Main.storyboard */,
-				A29898071CFE3A21003D9F8A /* Welcome.swift */,
 				A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */,
+				A29898231D0311C4003D9F8A /* AgreeTermsPrivacy.swift */,
 				A29898091CFE3BCD003D9F8A /* SignInAccount.swift */,
 				A23917251CF6A2B40048470A /* FilesCollectionViewController.swift */,
 				A24FEAFD1CFBA9E00037944D /* Message */,
@@ -1431,7 +1431,6 @@
 			files = (
 				A239172E1CF7898C0048470A /* TermsOfService.swift in Sources */,
 				A29D8F961CF8920600A4AC65 /* Account.swift in Sources */,
-				A29898081CFE3A21003D9F8A /* Welcome.swift in Sources */,
 				A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */,
 				A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */,
 				A20393D31CF258820057C70A /* RecentTableViewCell.swift in Sources */,
@@ -1443,6 +1442,7 @@
 				A2B3A0531C96571700A4BB27 /* AppDelegate.swift in Sources */,
 				A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */,
 				A27428F91CF274270056A196 /* ChooseUserViewController.swift in Sources */,
+				A29898241D0311C4003D9F8A /* AgreeTermsPrivacy.swift in Sources */,
 				A27428FB1CF27D730056A196 /* SettingsTableViewController.swift in Sources */,
 				A2B3A0671C9658C700A4BB27 /* SWRevealViewController.m in Sources */,
 				A27429051CF38DCC0056A196 /* Camera.swift in Sources */,

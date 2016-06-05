@@ -244,16 +244,18 @@ class auth : UIViewController {
         
         newAccountAlert?.addAction(alertActionForTextField)
         
-        alertController = UIAlertController(title: "Hello", message: "What would you like to do?", preferredStyle: .Alert)
+        alertController = UIAlertController(title: "Hello", message: "You are currently not signed in. What would you like to do?", preferredStyle: .Alert)
         
         let signInAction = UIAlertAction(title: "Sign in", style: .Default) { (action) -> Void in
             print("Sign in button was pressed")
             self.presentViewController(self.signInAlert!, animated: true, completion: nil)
         }
-        let signUpAction = UIAlertAction(title: "Sign up", style: .Default) { (action) -> Void in
+        let signUpAction = UIAlertAction(title: "Create account", style: .Default) { (action) -> Void in
             print("Sign up button was pressed")
             
-            self.presentViewController(self.newAccountAlert!, animated: true, completion: nil)
+            self.performSegueWithIdentifier("AgreeToTermsPrivacy", sender: self)
+            
+            //self.presentViewController(self.newAccountAlert!, animated: true, completion: nil)
             
         }
         

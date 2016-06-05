@@ -52,6 +52,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
             chatVC.recent = recent
             
             chatVC.chatRoomId = recent["chatRoomID"] as? String
+            chatVC.navTitle = (recent["withUserUsername"] as? String)!
             
         }
     }
