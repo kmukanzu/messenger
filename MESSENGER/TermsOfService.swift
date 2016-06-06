@@ -9,17 +9,45 @@
 import Foundation
 
 class TermsOfService: UIViewController {
-    
+
     @IBOutlet weak var webView: UIWebView!
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+            super.viewDidLoad()
+            
+            let activityInd =  UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+            let barButton = UIBarButtonItem(customView: activityInd)
+            self.navigationItem.setRightBarButtonItem(barButton, animated: true)
+            activityInd.color = UIColor.lightGrayColor()
+            activityInd.startAnimating()
+            
+            self.activityIndicator = activityInd
+            
+            loadAddress()
+        }
         
-        self.tabBarController?.tabBar.hidden = true
+        func loadAddress() {
+            
+            let requestURL = NSURL (string: "https://support.snapchat.com/en-US/")
+            let request = NSURLRequest(URL: requestURL!)
+            webView.loadRequest(request)
+        }
         
-        let url = NSURL (string: "https://www.snapchat.com/terms")
+        func webViewDidStartLoad( _: UIWebView) {
+            
+            activityIndicator.startAnimating()
+        }
         
-        webView.loadRequest(NSURLRequest(URL: url!))
-    }
-
+        func webViewDidFinishLoad( _ : UIWebView) {
+            
+            activityIndicator.stopAnimating()
+        }
+        
+        override func viewWillLayoutSubviews() {
+            super.viewWillLayoutSubviews()
+            
+            webView.scrollView.contentInset = UIEdgeInsetsZero
+        }
 }

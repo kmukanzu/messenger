@@ -14,6 +14,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     
     @IBAction func moreButton(sender: AnyObject) {
         
+        //options()
         self.performSegueWithIdentifier("messagesToSettings", sender: self)
     }
     
@@ -160,7 +161,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
         })
     }
     
-    func edit() {
+    func options() {
         
         
         //self.tabBarController?.tabBar.hidden = true
@@ -168,7 +169,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
         let actionAlert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         let editSettings = UIAlertAction(title: "Settings", style: .Default) { (Alert:UIAlertAction) -> Void in
-            self.performSegueWithIdentifier("goToSettings", sender: self)
+            self.performSegueWithIdentifier("messagesToSettings", sender: self)
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (Alert:UIAlertAction) -> Void in

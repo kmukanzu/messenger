@@ -10,22 +10,46 @@ import Foundation
 
 class SupportViewController : UIViewController {
     
+    var activityIndicator = UIActivityIndicatorView()
+    
+    @IBOutlet weak var actInd: UIActivityIndicatorView!
+    
     @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.hidden = true
+        let activityInd =  UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        let barButton = UIBarButtonItem(customView: activityInd)
+        self.navigationItem.setRightBarButtonItem(barButton, animated: true)
+        activityInd.color = UIColor.lightGrayColor()
+        activityInd.startAnimating()
         
-        let url = NSURL (string: "https://support.snapchat.com/en-US/")
+        self.activityIndicator = activityInd
         
-        webView.loadRequest(NSURLRequest(URL: url!))
+        loadAddress()
+    }
+    
+    func loadAddress() {
         
+        let requestURL = NSURL (string: "https://support.snapchat.com/en-US/")
+        let request = NSURLRequest(URL: requestURL!)
+        webView.loadRequest(request)
+    }
+    
+    func webViewDidStartLoad( _: UIWebView) {
         
+        activityIndicator.startAnimating()
+    }
+    
+    func webViewDidFinishLoad( _ : UIWebView) {
+        
+        activityIndicator.stopAnimating()
     }
     
     override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews();
+        super.viewWillLayoutSubviews()
         
-        //webView.scrollView.contentInset = UIEdgeInsetsZero;
+        webView.scrollView.contentInset = UIEdgeInsetsZero
     }
 }

@@ -15,6 +15,8 @@ protocol ChooseUserDelegate {
 
 class SearchUserViewController : UITableViewController, UISearchResultsUpdating {
     
+    var universityID = String()
+    
     var users: [BackendlessUser] = []
     var filteredUsers : [BackendlessUser] = []
     
@@ -25,8 +27,58 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     var searchController : UISearchController!
     var resultsController = UITableViewController()
     
+    let collation = UILocalizedIndexedCollation.currentCollation()
+    var sections: [[BackendlessUser]] = []
+    
+    var objects: [BackendlessUser] = [] {
+        didSet {
+            let selector: Selector = "localizedTitle"
+            sections = Array(count: collation.sectionTitles.count, repeatedValue: [])
+            
+            let sortedObjects = collation.sortedArrayFromArray(objects, collationStringSelector: selector)
+            for object in sortedObjects {
+                let sectionNumber = collation.sectionForObject(object, collationStringSelector: selector)
+                sections[sectionNumber].append(object as! BackendlessUser)
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    func getMainPart2(s: String) -> String {
+        var v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        v?.removeLast()
+        
+        return (v!.last)!
+    }
+    
+    func getMainPart1(s: String) -> String {
+        let v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        
+        return (v!.last)!
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        return collation.sectionTitles[section]
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String] {
+        return collation.sectionIndexTitles
+    }
+    
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return collation.sectionForSectionIndexTitleAtIndex(index)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let email = backendless.userService.currentUser.email
+        let university = self.getMainPart2(email)
+        let dotEdu = self.getMainPart1(email)
+        self.universityID = university + dotEdu
+        
+        print(universityID)
         
         self.resultsController.tableView.dataSource = self
         self.resultsController.tableView.delegate = self
@@ -131,7 +183,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     
     func loadUsers() {
         
-        let whereClause = "objectId != '\(backendless.userService.currentUser.objectId)'"
+        let whereClause = "objectId != '\(backendless.userService.currentUser.objectId)' AND UniversityID = '\(self.universityID)'"
         
         let dataQuery = BackendlessDataQuery()
         dataQuery.whereClause = whereClause

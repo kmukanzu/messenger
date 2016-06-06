@@ -52,7 +52,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image40.png" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-kk-lbg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-kk-lbg">
                                                     <rect key="frame" x="16" y="9" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="cec-2K-k1b"/>
@@ -233,7 +233,7 @@
                         <outlet property="termsCell" destination="PEI-ji-3bV" id="EVl-h8-9lb"/>
                         <segue destination="gZi-tf-QJl" kind="show" identifier="goToSupport" id="H85-FM-DHj"/>
                         <segue destination="kfh-DX-0yz" kind="show" identifier="goToAccount" id="7Ms-Xo-2dk"/>
-                        <segue destination="mLF-jc-kmQ" kind="show" identifier="goToTermsAndPrivacy" id="45p-A9-Pvw"/>
+                        <segue destination="WcZ-Sk-4Em" kind="show" identifier="goToTermsAndPrivacy" id="6zd-B8-wmY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jt-Ui-TSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,39 +241,148 @@
             <point key="canvasLocation" x="-1657" y="-1677"/>
         </scene>
         <!--Terms & Privacy-->
-        <scene sceneID="khD-5L-li4">
+        <scene sceneID="Eyl-2W-yeA">
             <objects>
-                <viewController id="mLF-jc-kmQ" customClass="TermsOfService" customModule="MESSENGER" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WcZ-Sk-4Em" customClass="TermsAndPrivacy" customModule="MESSENGER" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ai1-Rc-Rb4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="BlC-UU-e74">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="p1f-aj-mZ5" style="IBUITableViewCellStyleDefault" id="9Jq-yB-Sgv">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Jq-yB-Sgv" id="FU1-lu-IOK">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p1f-aj-mZ5">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="cdd-wt-Z1x" style="IBUITableViewCellStyleDefault" id="cPF-oa-dIH">
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cPF-oa-dIH" id="CBE-ln-8ab">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cdd-wt-Z1x">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WcZ-Sk-4Em" id="4Kc-aF-Wnf"/>
+                            <outlet property="delegate" destination="WcZ-Sk-4Em" id="Wz7-Zi-H3L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Terms &amp; Privacy" id="TAo-f9-16M">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uAr-c3-a8N"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="privacyCell" destination="cPF-oa-dIH" id="faK-Ve-3PM"/>
+                        <outlet property="termsCell" destination="9Jq-yB-Sgv" id="e3t-Jf-WNd"/>
+                        <segue destination="vmA-f7-Hyy" kind="show" identifier="goToPrivacyPolicy" id="eTn-AY-sbE"/>
+                        <segue destination="Gbd-Bd-BGm" kind="show" identifier="goToTermsOfService" id="eby-Z0-mM4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaw-9e-dml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1217" y="-2314"/>
+        </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="rkX-kI-sH4">
+            <objects>
+                <viewController id="vmA-f7-Hyy" customClass="PrivacyPolicy" customModule="MESSENGER" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aEL-V7-eZd"/>
-                        <viewControllerLayoutGuide type="bottom" id="HYM-oQ-etU"/>
+                        <viewControllerLayoutGuide type="top" id="O7a-Zt-jlh"/>
+                        <viewControllerLayoutGuide type="bottom" id="qtZ-kY-qyZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rNG-cy-oxm">
+                    <view key="view" contentMode="scaleToFill" id="4zL-HY-4OL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-ll-fWT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABj-Ge-r0Z">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vmA-f7-Hyy" id="pul-rs-iJm"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Xxy-ll-fWT" secondAttribute="bottom" id="5i9-jP-z1f"/>
-                            <constraint firstAttribute="trailing" secondItem="Xxy-ll-fWT" secondAttribute="trailing" id="EK4-S2-mnq"/>
-                            <constraint firstItem="Xxy-ll-fWT" firstAttribute="top" secondItem="rNG-cy-oxm" secondAttribute="top" id="g2u-v0-5n0"/>
-                            <constraint firstItem="Xxy-ll-fWT" firstAttribute="leading" secondItem="rNG-cy-oxm" secondAttribute="leading" id="yjk-8B-tkC"/>
+                            <constraint firstAttribute="trailing" secondItem="ABj-Ge-r0Z" secondAttribute="trailing" id="2gb-yY-0ad"/>
+                            <constraint firstItem="ABj-Ge-r0Z" firstAttribute="leading" secondItem="4zL-HY-4OL" secondAttribute="leading" id="9PG-h0-wjV"/>
+                            <constraint firstItem="ABj-Ge-r0Z" firstAttribute="bottom" secondItem="qtZ-kY-qyZ" secondAttribute="top" id="FMX-gp-Srz"/>
+                            <constraint firstItem="ABj-Ge-r0Z" firstAttribute="top" secondItem="O7a-Zt-jlh" secondAttribute="bottom" id="OPg-F4-cFy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Terms &amp; Privacy" id="mIz-xl-VOJ"/>
+                    <navigationItem key="navigationItem" title="Privacy Policy" id="y5w-ls-fa8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="webView" destination="Xxy-ll-fWT" id="5vO-Wk-DA7"/>
+                        <outlet property="webView" destination="ABj-Ge-r0Z" id="Fh9-ht-U9S"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GaB-AH-HXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSa-fz-y6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1217" y="-2386"/>
+            <point key="canvasLocation" x="-778" y="-2009"/>
+        </scene>
+        <!--Terms of Service-->
+        <scene sceneID="4N9-0I-xEO">
+            <objects>
+                <viewController id="Gbd-Bd-BGm" customClass="TermsOfService" customModule="MESSENGER" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UYk-Gz-N0f"/>
+                        <viewControllerLayoutGuide type="bottom" id="CFm-cl-sEW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TB9-wq-APT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFh-Ro-vt5">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gbd-Bd-BGm" id="NFX-Bn-SkU"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YFh-Ro-vt5" firstAttribute="bottom" secondItem="CFm-cl-sEW" secondAttribute="top" id="73H-0F-qrn"/>
+                            <constraint firstItem="YFh-Ro-vt5" firstAttribute="top" secondItem="UYk-Gz-N0f" secondAttribute="bottom" id="8zG-CI-Qa6"/>
+                            <constraint firstItem="YFh-Ro-vt5" firstAttribute="leading" secondItem="TB9-wq-APT" secondAttribute="leading" id="KiG-NH-hb3"/>
+                            <constraint firstAttribute="trailing" secondItem="YFh-Ro-vt5" secondAttribute="trailing" id="Rpp-jr-nHy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms of Service" id="HHh-Dc-6oh"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="YFh-Ro-vt5" id="iia-jH-U7A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKn-xR-ojW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="-2667"/>
         </scene>
         <!--Support-->
         <scene sceneID="tVo-Dn-137">
@@ -288,16 +397,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feg-gP-4vO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gZi-tf-QJl" id="oOw-3Y-REM"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="feg-gP-4vO" secondAttribute="trailing" id="FGg-Kb-Xrs"/>
-                            <constraint firstItem="feg-gP-4vO" firstAttribute="top" secondItem="RQB-Xx-F8h" secondAttribute="top" id="QBE-I6-DxO"/>
-                            <constraint firstItem="pD2-1A-d1f" firstAttribute="top" secondItem="feg-gP-4vO" secondAttribute="bottom" id="U7y-qv-bkU"/>
-                            <constraint firstItem="feg-gP-4vO" firstAttribute="leading" secondItem="RQB-Xx-F8h" secondAttribute="leading" id="r04-Vw-K8D"/>
+                            <constraint firstAttribute="trailing" secondItem="feg-gP-4vO" secondAttribute="trailing" id="IA2-iS-8PI"/>
+                            <constraint firstItem="feg-gP-4vO" firstAttribute="top" secondItem="vgB-td-70d" secondAttribute="bottom" id="bVo-o8-wAB"/>
+                            <constraint firstItem="feg-gP-4vO" firstAttribute="leading" secondItem="RQB-Xx-F8h" secondAttribute="leading" id="eXQ-lB-7fl"/>
+                            <constraint firstItem="feg-gP-4vO" firstAttribute="bottom" secondItem="pD2-1A-d1f" secondAttribute="top" id="xDd-S1-u4r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Support" id="OL5-dD-rKB"/>
@@ -779,7 +891,11 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="privacyCell" destination="r1m-5o-Vxj" id="Wuo-p4-3fY"/>
+                        <outlet property="termsCell" destination="Gxy-k9-vTg" id="kp2-RG-1bt"/>
                         <segue destination="7M5-5S-iIZ" kind="show" identifier="TermsToCreateAccount" id="lay-Gg-hi6"/>
+                        <segue destination="Gbd-Bd-BGm" kind="show" identifier="goToTerms" id="Cz2-Lb-ewg"/>
+                        <segue destination="vmA-f7-Hyy" kind="show" identifier="goToPrivacy" id="wPP-sM-39d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WY2-xE-Frg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -860,7 +976,6 @@
     </scenes>
     <resources>
         <image name="account.png" width="25" height="25"/>
-        <image name="image40.png" width="40" height="40"/>
         <image name="information.png" width="25" height="25"/>
         <image name="invite.png" width="25" height="25"/>
         <image name="more.png" width="24" height="24"/>
@@ -872,5 +987,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="pIT-Dm-Pr5"/>
         <segue reference="J0y-B4-O45"/>
+        <segue reference="eby-Z0-mM4"/>
+        <segue reference="eTn-AY-sbE"/>
     </inferredMetricsTieBreakers>
 </document>

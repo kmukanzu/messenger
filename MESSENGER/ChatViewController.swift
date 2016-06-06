@@ -13,7 +13,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     let ref = firebase.child("Message")
     //Firebase(url: "https://umessengerapp.firebaseio.com//Message")
     
-    var profileImage = UIImage?.self
+    var profileImage = UIImage()
     
     var messages: [JSQMessage] = []
     var objects: [NSDictionary] = []
@@ -40,6 +40,8 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.collectionView!.transform = CGAffineTransformMake(1, 0, 0, -1, 0, 0)
         
         //self.title = navTitle
         
@@ -247,6 +249,17 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         }
     }
     
+    /*func withUserAvatarPhoto(){
+        
+        if let imageLink = withUser?.getProperty("Avatar") {
+            getImageFromURL(imageLink as! String, result: { (image) -> Void in
+                
+                self.avatarImageView.image = image
+            })
+
+        }
+    }*/
+    
     func createAvatars(avatars: NSMutableDictionary?) {
         
         var currentUserAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "image30.png"), diameter: 70)
@@ -263,6 +276,8 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         
         if let avat = avatars {
             if let withUserAvatarImage = avat.objectForKey(withUser!.objectId!) {
+                
+                
                 
                 withUserAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(data: withUserAvatarImage as! NSData), diameter: 70)
                 self.collectionView?.reloadData()
@@ -336,7 +351,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
                         JSQSystemSoundPlayer.jsq_playMessageReceivedSound()
                     }
                     
-                    self.finishReceivingMessageAnimated(true)
+                    self.finishReceivingMessageAnimated(false)
                     
                 } else {
                     
@@ -363,7 +378,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
             snapshot in
             
             self.insertMessages()
-            self.finishReceivingMessageAnimated(true)
+            self.finishReceivingMessageAnimated(false)
             self.initialLoadComlete = true
         })
     }

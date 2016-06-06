@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MessageUI
 
-class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 
     @IBAction func doneButton(sender: AnyObject) {
         
@@ -31,6 +32,8 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     var editFullName : UIAlertController?
     var reportAlert : UIAlertController?
+    
+    var sendMailErrorAlert : UIAlertController?
     
     var fullName = String()
     var issue = String()
@@ -82,32 +85,13 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         editFullName?.addAction(alertActionForTextFields)
         
-        reportAlert = UIAlertController(title: "What's the issue?", message: "Enter a descriptive message", preferredStyle: .Alert)
-        let cancels = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) -> Void in
+        sendMailErrorAlert = UIAlertController(title: "Error!", message: "Message unable to send. Check your network connection", preferredStyle: .Alert)
+        let cancels = UIAlertAction(title: "OK", style: .Cancel) { (action:UIAlertAction!) -> Void in
+            
             print("Cancel button was pressed")
         }
-        self.reportAlert?.addAction(cancels)
         
-        reportAlert?.addTextFieldWithConfigurationHandler({ (textfield) -> Void in
-            textfield.placeholder = ""
-            textfield.text = ""
-            textfield.autocapitalizationType = UITextAutocapitalizationType.Sentences
-        })
-        
-        let alertActionForTextFieldss = UIAlertAction(title: "Report", style: .Default) { (action) -> Void in
-            
-            if let textFields = self.reportAlert?.textFields {
-                let theTextFields = textFields as [UITextField]
-                let issueTextField = theTextFields[0].text
-                print("\(issueTextField)")
-                
-                self.issue = issueTextField!
-                
-            }
-            
-        }
-        
-        reportAlert?.addAction(alertActionForTextFieldss)
+        self.sendMailErrorAlert?.addAction(cancels)
         
     }
     
@@ -143,11 +127,23 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         }
         
         if indexPath.section == 2 && indexPath.row == 0 {
-            inviteAFriend()
+            //inviteAFriend()
+            invite()
         }
         
         if indexPath.section == 1 && indexPath.row == 1 {
-            self.presentViewController(reportAlert!, animated: true, completion: nil)
+            
+            let mailComposeViewController = configuredMailComposeViewController()
+            
+            if MFMailComposeViewController.canSendMail() {
+                
+                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+                
+            } else {
+            
+                self.presentViewController(sendMailErrorAlert!, animated: true, completion: nil)
+                
+            }
         }
         
         if indexPath.section == 1 && indexPath.row == 0 {
@@ -262,5 +258,42 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         self.presentViewController(actionAlert, animated: true, completion: nil)
     
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        
+        mailComposerVC.setToRecipients(["admin@universitymessenger.org"])
+        mailComposerVC.setSubject("Reporting an issue")
+        mailComposerVC.setMessageBody("Hi Team!\n\nI would like to share the following issue(s)..\n", isHTML: false)
+        
+        return mailComposerVC
+        
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail sent failure: \(error!.localizedDescription)")
+        default:
+            break
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func invite() {
+        
+        let vc = UIActivityViewController(activityItems: ["Hey check out University Messenger. Download the app on universitymessenger.org/download"], applicationActivities: nil)
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 }
