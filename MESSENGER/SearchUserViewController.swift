@@ -17,14 +17,10 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     
     var universityID = String()
     
-    var animalIndexTitles = NSArray()
-    var animalSectionTitles = NSArray()
-    
     var users: [BackendlessUser] = []
     var filteredUsers : [BackendlessUser] = []
     
     var delegate: ChooseUserDelegate!
-    
     
     var searchController : UISearchController!
     var resultsController = UITableViewController()
