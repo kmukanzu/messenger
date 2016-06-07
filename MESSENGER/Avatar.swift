@@ -10,7 +10,7 @@ import Foundation
 
 func uploadAvatar(image: UIImage, result: (imageLink: String?) ->Void) {
     
-    let imageData = UIImageJPEGRepresentation(image, 0.1)
+    let imageData = UIImageJPEGRepresentation(image, 0.15)
     
     let dateString = dateFormatter().stringFromDate(NSDate())
     

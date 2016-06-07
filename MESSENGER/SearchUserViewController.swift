@@ -17,33 +17,17 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     
     var universityID = String()
     
+    var animalIndexTitles = NSArray()
+    var animalSectionTitles = NSArray()
+    
     var users: [BackendlessUser] = []
     var filteredUsers : [BackendlessUser] = []
     
     var delegate: ChooseUserDelegate!
     
-    var selectedUser = String()
     
     var searchController : UISearchController!
     var resultsController = UITableViewController()
-    
-    let collation = UILocalizedIndexedCollation.currentCollation()
-    var sections: [[BackendlessUser]] = []
-    
-    var objects: [BackendlessUser] = [] {
-        didSet {
-            let selector: Selector = "localizedTitle"
-            sections = Array(count: collation.sectionTitles.count, repeatedValue: [])
-            
-            let sortedObjects = collation.sortedArrayFromArray(objects, collationStringSelector: selector)
-            for object in sortedObjects {
-                let sectionNumber = collation.sectionForObject(object, collationStringSelector: selector)
-                sections[sectionNumber].append(object as! BackendlessUser)
-            }
-            
-            self.tableView.reloadData()
-        }
-    }
     
     func getMainPart2(s: String) -> String {
         var v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
@@ -57,19 +41,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         
         return (v!.last)!
     }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
-        return collation.sectionTitles[section]
-    }
-    
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String] {
-        return collation.sectionIndexTitles
-    }
-    
-    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return collation.sectionForSectionIndexTitleAtIndex(index)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,8 +49,6 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         let university = self.getMainPart2(email)
         let dotEdu = self.getMainPart1(email)
         self.universityID = university + dotEdu
-        
-        print(universityID)
         
         self.resultsController.tableView.dataSource = self
         self.resultsController.tableView.delegate = self
@@ -105,7 +75,6 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
                 return false
                 
             }
-            
         }
         
         self.resultsController.tableView.reloadData()
@@ -172,13 +141,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.dismissViewControllerAnimated(true, completion: nil)
         searchController.active = false
-        //searchController.dismissViewControllerAnimated(false, completion: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
-        
+        searchController.dismissViewControllerAnimated(false, completion: nil)
     }
     
     func loadUsers() {
@@ -187,6 +150,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         
         let dataQuery = BackendlessDataQuery()
         dataQuery.whereClause = whereClause
+        
         
         let dataStore = backendless.persistenceService.of(BackendlessUser.ofClass())
         dataStore.find(dataQuery, response: { (users : BackendlessCollection!) -> Void in

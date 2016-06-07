@@ -114,15 +114,9 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Slide)
-        
         loadRecents()
         
-        //self.tabBarController?.tabBar.hidden = true
-        
         tableView.tableFooterView = UIView()
-        
-        //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
     
@@ -147,7 +141,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
                     
                     self.recents.append(recent as! NSDictionary)
                     
-                    //add functio to have offline access as well, this will download with user recent as well so that we will not create it again
+                    //add function to have offline access as well, this will download with user recent as well so that we will not create it again
                     
                     firebase.child("Recent").queryOrderedByChild("chatRoomID").queryEqualToValue(recent["chatRoomID"]).observeEventType(.Value, withBlock: {
                         snapshot in
@@ -162,9 +156,6 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     }
     
     func options() {
-        
-        
-        //self.tabBarController?.tabBar.hidden = true
         
         let actionAlert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
