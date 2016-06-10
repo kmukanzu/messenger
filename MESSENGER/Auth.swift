@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
-//
+
 class auth : UIViewController {
     
     var firebase = FIRDatabase.database().reference()
@@ -253,9 +253,9 @@ class auth : UIViewController {
         let signUpAction = UIAlertAction(title: "Create account", style: .Default) { (action) -> Void in
             print("Sign up button was pressed")
             
-            //self.performSegueWithIdentifier("AgreeToTermsPrivacy", sender: self)
+            self.performSegueWithIdentifier("AgreeToTermsPrivacy", sender: self)
             
-            self.presentViewController(self.newAccountAlert!, animated: true, completion: nil)
+            //self.presentViewController(self.newAccountAlert!, animated: true, completion: nil)
             
         }
         

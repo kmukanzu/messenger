@@ -41,6 +41,8 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         let email = backendless.userService.currentUser.email
         let university = self.getMainPart2(email)
         let dotEdu = self.getMainPart1(email)
@@ -56,6 +58,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         definesPresentationContext = true
         
         loadUsers()
+        
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -147,6 +150,9 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         let dataQuery = BackendlessDataQuery()
         dataQuery.whereClause = whereClause
         
+        let queryOptions = QueryOptions()
+        queryOptions.sortBy = ["name"]
+        dataQuery.queryOptions = queryOptions
         
         let dataStore = backendless.persistenceService.of(BackendlessUser.ofClass())
         dataStore.find(dataQuery, response: { (users : BackendlessCollection!) -> Void in

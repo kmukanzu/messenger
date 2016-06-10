@@ -79,6 +79,12 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 
                 self.fullName = fullNameTextField!
                 
+                let properties = ["name" : self.fullName]
+                
+                backendless.userService.currentUser.updateProperties(properties)
+                
+                self.nameLabel.text = self.fullName
+                
             }
             
         }
@@ -184,6 +190,8 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     
     func updateUI() {
         

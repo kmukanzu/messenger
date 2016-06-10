@@ -61,7 +61,6 @@
 		A23917201CF686200048470A /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A239171D1CF686200048470A /* setting@2x.png */; };
 		A23917211CF686200048470A /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A239171E1CF686200048470A /* setting@3x.png */; };
 		A23917221CF686200048470A /* settingA.png in Resources */ = {isa = PBXBuildFile; fileRef = A239171F1CF686200048470A /* settingA.png */; };
-		A23917261CF6A2B40048470A /* FilesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23917251CF6A2B40048470A /* FilesCollectionViewController.swift */; };
 		A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23917271CF6A6D40048470A /* searchGroupsVC.swift */; };
 		A239172C1CF76A650048470A /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239172B1CF76A650048470A /* Avatar.swift */; };
 		A239172E1CF7898C0048470A /* TermsOfService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239172D1CF7898C0048470A /* TermsOfService.swift */; };
@@ -140,6 +139,11 @@
 		A29F30751CC4A70200E4F7BC /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A29F30741CC4A70200E4F7BC /* menu.png */; };
 		A29F30771CC4A70600E4F7BC /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29F30761CC4A70600E4F7BC /* menu@2x.png */; };
 		A2AF1B1E1D04AC3A00B8A38B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AF1B1D1D04AC3A00B8A38B /* MessageUI.framework */; };
+		A2AF1B201D086CD100B8A38B /* IMG_5417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B1F1D086CD100B8A38B /* IMG_5417.JPG */; };
+		A2AF1B241D086E4700B8A38B /* emailTextField24.png in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B211D086E4600B8A38B /* emailTextField24.png */; };
+		A2AF1B251D086E4700B8A38B /* emailTextField24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B221D086E4700B8A38B /* emailTextField24@2x.png */; };
+		A2AF1B261D086E4700B8A38B /* emailTextField24@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B231D086E4700B8A38B /* emailTextField24@3x.png */; };
+		A2AF1B281D0873F400B8A38B /* homeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF1B271D0873F400B8A38B /* homeScreen.swift */; };
 		A2B3A0531C96571700A4BB27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3A0521C96571700A4BB27 /* AppDelegate.swift */; };
 		A2B3A05A1C96571700A4BB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B3A0591C96571700A4BB27 /* Assets.xcassets */; };
 		A2B3A05D1C96571700A4BB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B3A05B1C96571700A4BB27 /* LaunchScreen.storyboard */; };
@@ -238,7 +242,6 @@
 		A239171D1CF686200048470A /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		A239171E1CF686200048470A /* setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@3x.png"; sourceTree = "<group>"; };
 		A239171F1CF686200048470A /* settingA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingA.png; sourceTree = "<group>"; };
-		A23917251CF6A2B40048470A /* FilesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesCollectionViewController.swift; sourceTree = "<group>"; };
 		A23917271CF6A6D40048470A /* searchGroupsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchGroupsVC.swift; sourceTree = "<group>"; };
 		A239172B1CF76A650048470A /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		A239172D1CF7898C0048470A /* TermsOfService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfService.swift; sourceTree = "<group>"; };
@@ -317,6 +320,11 @@
 		A29F30741CC4A70200E4F7BC /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		A29F30761CC4A70600E4F7BC /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		A2AF1B1D1D04AC3A00B8A38B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A2AF1B1F1D086CD100B8A38B /* IMG_5417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5417.JPG; sourceTree = "<group>"; };
+		A2AF1B211D086E4600B8A38B /* emailTextField24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailTextField24.png; sourceTree = "<group>"; };
+		A2AF1B221D086E4700B8A38B /* emailTextField24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailTextField24@2x.png"; sourceTree = "<group>"; };
+		A2AF1B231D086E4700B8A38B /* emailTextField24@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailTextField24@3x.png"; sourceTree = "<group>"; };
+		A2AF1B271D0873F400B8A38B /* homeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeScreen.swift; sourceTree = "<group>"; };
 		A2B3A04F1C96571700A4BB27 /* MESSENGER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MESSENGER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B3A0521C96571700A4BB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B3A0591C96571700A4BB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -621,6 +629,10 @@
 		A2A5A8941CB4C6E100B1CBEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF1B211D086E4600B8A38B /* emailTextField24.png */,
+				A2AF1B221D086E4700B8A38B /* emailTextField24@2x.png */,
+				A2AF1B231D086E4700B8A38B /* emailTextField24@3x.png */,
+				A2AF1B1F1D086CD100B8A38B /* IMG_5417.JPG */,
 				A29898171CFE9A17003D9F8A /* cancel.png */,
 				A29898181CFE9A17003D9F8A /* cancel@2x.png */,
 				A29898191CFE9A17003D9F8A /* cancel@3x.png */,
@@ -775,10 +787,10 @@
 				A2B3A0521C96571700A4BB27 /* AppDelegate.swift */,
 				A24FEAFA1CFB91E10037944D /* Auth.swift */,
 				A2F1EC411CC61C6300DFF571 /* Main.storyboard */,
-				A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */,
+				A2AF1B271D0873F400B8A38B /* homeScreen.swift */,
 				A29898231D0311C4003D9F8A /* AgreeTermsPrivacy.swift */,
+				A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */,
 				A29898091CFE3BCD003D9F8A /* SignInAccount.swift */,
-				A23917251CF6A2B40048470A /* FilesCollectionViewController.swift */,
 				A24FEAFD1CFBA9E00037944D /* Message */,
 				A29D8F921CF88F0A00A4AC65 /* Groups */,
 				A29D8F8F1CF88E7800A4AC65 /* Utilities */,
@@ -1312,6 +1324,7 @@
 				A23917861CF7C1280048470A /* invite.png in Resources */,
 				A2030F1B1CEB771900B35157 /* circle.png in Resources */,
 				A239171B1CF685730048470A /* settings@2x.png in Resources */,
+				A2AF1B201D086CD100B8A38B /* IMG_5417.JPG in Resources */,
 				A23917021CF636000048470A /* collections.png in Resources */,
 				A23916F01CF634280048470A /* chat.png in Resources */,
 				A2F04BDC1CA11052009CBE43 /* Light_Gray_429810_i0.png in Resources */,
@@ -1341,12 +1354,15 @@
 				A256CD011CC5FD8B00B1F5A4 /* message.png in Resources */,
 				A256CD121CC6059A00B1F5A4 /* groups@2x.png in Resources */,
 				A239176A1CF7AC020048470A /* report@3x.png in Resources */,
+				A2AF1B261D086E4700B8A38B /* emailTextField24@3x.png in Resources */,
 				A239171C1CF685730048470A /* settings@3x.png in Resources */,
 				A29F30751CC4A70200E4F7BC /* menu.png in Resources */,
 				A239171A1CF685730048470A /* settings.png in Resources */,
 				A23916F61CF634B00048470A /* chats.png in Resources */,
 				A20419831C9FB06A0090C677 /* option.png in Resources */,
+				A2AF1B251D086E4700B8A38B /* emailTextField24@2x.png in Resources */,
 				A256CD0D1CC604F200B1F5A4 /* group@3x.png in Resources */,
+				A2AF1B241D086E4700B8A38B /* emailTextField24.png in Resources */,
 				A2F04BE41CA1AF80009CBE43 /* compose@2x.png in Resources */,
 				A23917041CF636000048470A /* collections@3x.png in Resources */,
 				A2BF1CA61C9BC34500B8E841 /* navigation.png in Resources */,
@@ -1430,6 +1446,7 @@
 				A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */,
 				A29898201D0131C9003D9F8A /* MessagesTableViewCell.swift in Sources */,
 				A298981E1D012A12003D9F8A /* MessagesTableViewController.swift in Sources */,
+				A2AF1B281D0873F400B8A38B /* homeScreen.swift in Sources */,
 				A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */,
 				A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */,
 				A2B3A0531C96571700A4BB27 /* AppDelegate.swift in Sources */,
@@ -1441,7 +1458,6 @@
 				A29898221D013A9A003D9F8A /* SearchUserViewController.swift in Sources */,
 				A24FEAFB1CFB91E10037944D /* Auth.swift in Sources */,
 				A20393D71CF25F250057C70A /* Recent.swift in Sources */,
-				A23917261CF6A2B40048470A /* FilesCollectionViewController.swift in Sources */,
 				A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */,
 				A29D8F981CF8924200A4AC65 /* TermsAndPrivacy.swift in Sources */,
 				A27428FD1CF288280056A196 /* ChatViewController.swift in Sources */,

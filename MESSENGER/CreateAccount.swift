@@ -62,7 +62,7 @@ class CreateAccount : UIViewController {
             
         } else {
             
-            signUpErrorAlert()
+            self.presentViewController(signUpError!, animated: true, completion: nil)
             
         }
         
@@ -84,9 +84,19 @@ class CreateAccount : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        newUser = BackendlessUser()
+        
         self.fullNameTextField .becomeFirstResponder()
+        
         createAccountOutlet.layer.cornerRadius = 8
         createAccountOutlet.layer.masksToBounds = true
+        
+        signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
+        let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in
+            print("Ok button was pressed")
+            //self.presentViewController(self.newAccountAlert!, animated: true, completion: nil)
+        }
+        signUpError?.addAction(button)
         
     }
     
@@ -108,19 +118,7 @@ class CreateAccount : UIViewController {
             }) { (fault : Fault!) -> Void in
                 print("\(fault)")
                 
-                //self.presentViewController(self.signUpError!, animated: true, completion: nil)
+                self.presentViewController(self.signUpError!, animated: true, completion: nil)
         }
-    }
-    
-    func signUpErrorAlert() {
-    
-        signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
-        let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in
-            print("Ok button was pressed")
-            
-        }
-        
-        signUpError?.addAction(button)
-    
     }
 }

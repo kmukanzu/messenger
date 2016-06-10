@@ -30,7 +30,7 @@ class PrivacyPolicy : UIViewController {
     
     func loadAddress() {
         
-        let requestURL = NSURL (string: "https://support.snapchat.com/en-US/")
+        let requestURL = NSURL (string: "http://www.universitymessenger.org/privacy/")
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
