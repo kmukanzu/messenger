@@ -79,11 +79,19 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 
                 self.fullName = fullNameTextField!
                 
-                let properties = ["name" : self.fullName]
+                let properties = ["name" : fullNameTextField!]
                 
                 backendless.userService.currentUser.updateProperties(properties)
                 
-                self.nameLabel.text = self.fullName
+                backendless.userService.update(backendless.userService.currentUser, response: { (updatedUser: BackendlessUser!) -> Void in
+                    
+                    self.nameLabel.text = self.fullName
+                    
+                    }, error: { (fault : Fault!) -> Void in
+                        print("error: \(fault)")
+                })
+                
+                //self.nameLabel.text = self.fullName
                 
             }
             
@@ -215,7 +223,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         let editName = UIAlertAction(title: "Edit Name", style: .Default) { (Alert:UIAlertAction) -> Void in
             print("Edit Name button was pressed")
-            self.tabBarController?.tabBar.hidden = false
+            
             self.presentViewController(self.editFullName!, animated: true, completion: nil)
             
             

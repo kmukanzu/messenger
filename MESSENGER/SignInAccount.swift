@@ -8,25 +8,7 @@
 
 import Foundation
 
-class SignInAccount : UIViewController {
-    
-    @IBAction func dismissButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    
-    
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInOutlet: UIButton!
-    @IBAction func signInButton(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func forgotPasswordButton(sender: AnyObject) {
-    }
+class SignInAccount : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

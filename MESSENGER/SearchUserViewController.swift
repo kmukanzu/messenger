@@ -41,7 +41,7 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.tableFooterView = UIView()
         
         let email = backendless.userService.currentUser.email
         let university = self.getMainPart2(email)

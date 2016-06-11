@@ -15,7 +15,8 @@ class AgreeTermsPrivacy : UITableViewController {
     
     @IBAction func AgreeButton(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("TermsToCreateAccount", sender: self)
+        //self.performSegueWithIdentifier("TermsToCreateAccount", sender: self)
+        self.performSegueWithIdentifier("signingUp", sender: self)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

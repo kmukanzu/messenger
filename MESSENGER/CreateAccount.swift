@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CreateAccount : UIViewController {
+class CreateAccount : UITableViewController {
     
     //var firebase = FIRDatabase.database().reference()
     
@@ -38,11 +38,19 @@ class CreateAccount : UIViewController {
     var passwordHasReset : UIAlertController?
     var signUpError : UIAlertController?
     
+    @IBAction func signInAction(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("createToSignIn", sender: self)
+    }
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createAccountOutlet: UIButton!
     
+    @IBAction func termsPrivacyAction(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("createAccountToTerms", sender: self)
+    }
     @IBAction func createAccountAction(sender: AnyObject) {
         
         if emailTextField.text != "" && fullNameTextField.text != "" && passwordTextField.text != "" && emailTextField.text?.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text?.rangeOfString(".com") == nil {
@@ -88,8 +96,12 @@ class CreateAccount : UIViewController {
         
         self.fullNameTextField .becomeFirstResponder()
         
-        createAccountOutlet.layer.cornerRadius = 8
-        createAccountOutlet.layer.masksToBounds = true
+        //createAccountOutlet.layer.cornerRadius = 8
+        //createAccountOutlet.layer.masksToBounds = true
+        
+        passwordTextField.secureTextEntry = true
+        fullNameTextField.autocapitalizationType = UITextAutocapitalizationType.Words
+        emailTextField.keyboardType = UIKeyboardType.EmailAddress
         
         signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
         let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in

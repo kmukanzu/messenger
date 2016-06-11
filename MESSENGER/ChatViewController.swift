@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSQMessagesViewController
 
 class ChatViewController : JSQMessagesViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -44,6 +45,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         //self.collectionView!.transform = CGAffineTransformMake(1, 0, 0, -1, 0, 0)
         
         //self.title = navTitle
+        
         
         /*let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
@@ -249,17 +251,6 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         }
     }
     
-    /*func withUserAvatarPhoto(){
-        
-        if let imageLink = withUser?.getProperty("Avatar") {
-            getImageFromURL(imageLink as! String, result: { (image) -> Void in
-                
-                self.avatarImageView.image = image
-            })
-
-        }
-    }*/
-    
     func createAvatars(avatars: NSMutableDictionary?) {
         
         var currentUserAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "image30.png"), diameter: 70)
@@ -293,7 +284,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
             
             getImageFromURL(imageLink as! String, result: { (image) -> Void in
                 
-                let imageData = UIImageJPEGRepresentation(image!, 1.0)
+                let imageData = UIImageJPEGRepresentation(image!, 0.3)
                 
                 if self.avatarImagesDictionary != nil {
                     

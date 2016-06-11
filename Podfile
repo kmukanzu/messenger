@@ -1,5 +1,9 @@
-pod 'Firebase', '~>3.2.0'
-pod 'FirebaseAuth', '~> 3.0.2'
-pod 'FirebaseDatabase'
-pod 'JSQMessagesViewController'
-pod 'IDMPhotoBrowser'
+platform :ios, '9.0'
+use_frameworks!
+
+target 'MESSENGER' do
+    pod 'JSQMessagesViewController'
+    pod 'IDMPhotoBrowser'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+end
