@@ -8,6 +8,7 @@
 
 import Foundation
 import JSQMessagesViewController
+import SDWebImage
 
 class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     
@@ -61,7 +62,25 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 1
+        var numOfSection: NSInteger = 0
+        
+        if recents.count > 0 {
+            
+            self.tableView.backgroundView = nil
+            numOfSection = 1
+            
+            
+        } else {
+            
+            let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height))
+            noDataLabel.text = "You don't have any messages."
+            noDataLabel.textColor = UIColor.grayColor()
+            noDataLabel.textAlignment = NSTextAlignment.Center
+            self.tableView.backgroundView = noDataLabel
+            
+        }
+        
+        return numOfSection
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,6 +143,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     override func viewWillAppear(animated: Bool) {
         
         self.tabBarController?.tabBar.hidden = true
+        
         
     }
     

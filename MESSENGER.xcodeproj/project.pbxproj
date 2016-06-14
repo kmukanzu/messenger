@@ -32,6 +32,10 @@
 		A229E0B21C99E27500DB418F /* two-round-overlapping-speech-bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = A229E0B11C99E27500DB418F /* two-round-overlapping-speech-bubbles.png */; };
 		A229E0B41C99E2D300DB418F /* arrow487.png in Resources */ = {isa = PBXBuildFile; fileRef = A229E0B31C99E2D300DB418F /* arrow487.png */; };
 		A22CC3AD1CF40043008820D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22CC3AC1CF40043008820D8 /* GoogleService-Info.plist */; };
+		A2369AD01D0F2AF400B34A21 /* NSDateAndCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2369ACF1D0F2AF400B34A21 /* NSDateAndCalender.swift */; };
+		A2369AD21D0F49E400B34A21 /* LoadingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2369AD11D0F49E400B34A21 /* LoadingImages.swift */; };
+		A2369AD41D0F922D00B34A21 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2369AD31D0F922D00B34A21 /* RegisterUser.swift */; };
+		A2369AD61D0F980D00B34A21 /* PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2369AD51D0F980D00B34A21 /* PushNotifications.swift */; };
 		A23916D81CF60FF00048470A /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = A23916D51CF60FF00048470A /* list.png */; };
 		A23916D91CF60FF00048470A /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23916D61CF60FF00048470A /* list@2x.png */; };
 		A23916DA1CF60FF00048470A /* list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23916D71CF60FF00048470A /* list@3x.png */; };
@@ -139,6 +143,19 @@
 		A29D8F981CF8924200A4AC65 /* TermsAndPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D8F971CF8924200A4AC65 /* TermsAndPrivacy.swift */; };
 		A29F30751CC4A70200E4F7BC /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A29F30741CC4A70200E4F7BC /* menu.png */; };
 		A29F30771CC4A70600E4F7BC /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A29F30761CC4A70600E4F7BC /* menu@2x.png */; };
+		A2A25FB11D0C8A4700C29D01 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FAE1D0C8A4700C29D01 /* profile.png */; };
+		A2A25FB21D0C8A4700C29D01 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FAF1D0C8A4700C29D01 /* profile@2x.png */; };
+		A2A25FB31D0C8A4700C29D01 /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FB01D0C8A4700C29D01 /* profile@3x.png */; };
+		A2A25FB71D0C8AD000C29D01 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FB41D0C8AD000C29D01 /* lock.png */; };
+		A2A25FB81D0C8AD000C29D01 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FB51D0C8AD000C29D01 /* lock@2x.png */; };
+		A2A25FB91D0C8AD000C29D01 /* lock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FB61D0C8AD000C29D01 /* lock@3x.png */; };
+		A2A25FBD1D0C8BA200C29D01 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FBA1D0C8BA200C29D01 /* email.png */; };
+		A2A25FBE1D0C8BA200C29D01 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FBB1D0C8BA200C29D01 /* email@2x.png */; };
+		A2A25FBF1D0C8BA200C29D01 /* emial@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A25FBC1D0C8BA200C29D01 /* emial@3x.png */; };
+		A2A25FC11D0C931B00C29D01 /* deleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A25FC01D0C931B00C29D01 /* deleteAccount.swift */; };
+		A2A25FC31D0CBB7800C29D01 /* forgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A25FC21D0CBB7800C29D01 /* forgotPassword.swift */; };
+		A2A25FC51D0CD0E300C29D01 /* signedUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A25FC41D0CD0E300C29D01 /* signedUp.swift */; };
+		A2A25FC71D0E63AA00C29D01 /* CacheUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A25FC61D0E63AA00C29D01 /* CacheUser.swift */; };
 		A2AF1B1E1D04AC3A00B8A38B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AF1B1D1D04AC3A00B8A38B /* MessageUI.framework */; };
 		A2AF1B201D086CD100B8A38B /* IMG_5417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B1F1D086CD100B8A38B /* IMG_5417.JPG */; };
 		A2AF1B241D086E4700B8A38B /* emailTextField24.png in Resources */ = {isa = PBXBuildFile; fileRef = A2AF1B211D086E4600B8A38B /* emailTextField24.png */; };
@@ -208,6 +225,10 @@
 		A229E0B11C99E27500DB418F /* two-round-overlapping-speech-bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "two-round-overlapping-speech-bubbles.png"; sourceTree = "<group>"; };
 		A229E0B31C99E2D300DB418F /* arrow487.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow487.png; sourceTree = "<group>"; };
 		A22CC3AC1CF40043008820D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2369ACF1D0F2AF400B34A21 /* NSDateAndCalender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateAndCalender.swift; sourceTree = "<group>"; };
+		A2369AD11D0F49E400B34A21 /* LoadingImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingImages.swift; sourceTree = "<group>"; };
+		A2369AD31D0F922D00B34A21 /* RegisterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
+		A2369AD51D0F980D00B34A21 /* PushNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
 		A23916D51CF60FF00048470A /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		A23916D61CF60FF00048470A /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		A23916D71CF60FF00048470A /* list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@3x.png"; sourceTree = "<group>"; };
@@ -315,6 +336,19 @@
 		A29D8F971CF8924200A4AC65 /* TermsAndPrivacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacy.swift; sourceTree = "<group>"; };
 		A29F30741CC4A70200E4F7BC /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		A29F30761CC4A70600E4F7BC /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		A2A25FAE1D0C8A4700C29D01 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		A2A25FAF1D0C8A4700C29D01 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		A2A25FB01D0C8A4700C29D01 /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
+		A2A25FB41D0C8AD000C29D01 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		A2A25FB51D0C8AD000C29D01 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
+		A2A25FB61D0C8AD000C29D01 /* lock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@3x.png"; sourceTree = "<group>"; };
+		A2A25FBA1D0C8BA200C29D01 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		A2A25FBB1D0C8BA200C29D01 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
+		A2A25FBC1D0C8BA200C29D01 /* emial@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emial@3x.png"; sourceTree = "<group>"; };
+		A2A25FC01D0C931B00C29D01 /* deleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deleteAccount.swift; sourceTree = "<group>"; };
+		A2A25FC21D0CBB7800C29D01 /* forgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgotPassword.swift; sourceTree = "<group>"; };
+		A2A25FC41D0CD0E300C29D01 /* signedUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signedUp.swift; sourceTree = "<group>"; };
+		A2A25FC61D0E63AA00C29D01 /* CacheUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheUser.swift; sourceTree = "<group>"; };
 		A2AF1B1D1D04AC3A00B8A38B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A2AF1B1F1D086CD100B8A38B /* IMG_5417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5417.JPG; sourceTree = "<group>"; };
 		A2AF1B211D086E4600B8A38B /* emailTextField24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailTextField24.png; sourceTree = "<group>"; };
@@ -584,6 +618,9 @@
 				A27429001CF2C16A0056A196 /* IncomingMessage.swift */,
 				A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */,
 				A29898211D013A9A003D9F8A /* SearchUserViewController.swift */,
+				A2A25FC61D0E63AA00C29D01 /* CacheUser.swift */,
+				A2369ACF1D0F2AF400B34A21 /* NSDateAndCalender.swift */,
+				A2369AD11D0F49E400B34A21 /* LoadingImages.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -597,6 +634,7 @@
 				A29D8F931CF8905400A4AC65 /* PrivacyPolicy.swift */,
 				A29D8F901CF88EED00A4AC65 /* SupportViewController.swift */,
 				A29D8F951CF8920600A4AC65 /* Account.swift */,
+				A2A25FC01D0C931B00C29D01 /* deleteAccount.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -624,6 +662,15 @@
 		A2A5A8941CB4C6E100B1CBEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A2A25FBA1D0C8BA200C29D01 /* email.png */,
+				A2A25FBB1D0C8BA200C29D01 /* email@2x.png */,
+				A2A25FBC1D0C8BA200C29D01 /* emial@3x.png */,
+				A2A25FB41D0C8AD000C29D01 /* lock.png */,
+				A2A25FB51D0C8AD000C29D01 /* lock@2x.png */,
+				A2A25FB61D0C8AD000C29D01 /* lock@3x.png */,
+				A2A25FAE1D0C8A4700C29D01 /* profile.png */,
+				A2A25FAF1D0C8A4700C29D01 /* profile@2x.png */,
+				A2A25FB01D0C8A4700C29D01 /* profile@3x.png */,
 				A2AF1B211D086E4600B8A38B /* emailTextField24.png */,
 				A2AF1B221D086E4700B8A38B /* emailTextField24@2x.png */,
 				A2AF1B231D086E4700B8A38B /* emailTextField24@3x.png */,
@@ -785,7 +832,11 @@
 				A2AF1B271D0873F400B8A38B /* homeScreen.swift */,
 				A29898231D0311C4003D9F8A /* AgreeTermsPrivacy.swift */,
 				A298980B1CFE3BD8003D9F8A /* CreateAccount.swift */,
+				A2A25FC41D0CD0E300C29D01 /* signedUp.swift */,
 				A29898091CFE3BCD003D9F8A /* SignInAccount.swift */,
+				A2369AD31D0F922D00B34A21 /* RegisterUser.swift */,
+				A2A25FC21D0CBB7800C29D01 /* forgotPassword.swift */,
+				A2369AD51D0F980D00B34A21 /* PushNotifications.swift */,
 				A24FEAFD1CFBA9E00037944D /* Message */,
 				A29D8F921CF88F0A00A4AC65 /* Groups */,
 				A29D8F8F1CF88E7800A4AC65 /* Utilities */,
@@ -1275,6 +1326,8 @@
 				A2030F1F1CEB771900B35157 /* circles@2x.png in Resources */,
 				A2B3A05D1C96571700A4BB27 /* LaunchScreen.storyboard in Resources */,
 				A239170E1CF644420048470A /* profileImage40.png in Resources */,
+				A2A25FB91D0C8AD000C29D01 /* lock@3x.png in Resources */,
+				A2A25FBE1D0C8BA200C29D01 /* email@2x.png in Resources */,
 				A256CD131CC6059A00B1F5A4 /* groups@3x.png in Resources */,
 				A256CD111CC6059A00B1F5A4 /* groups.png in Resources */,
 				A25496191C9E3C9500046824 /* team@2x.png in Resources */,
@@ -1282,6 +1335,8 @@
 				A2F1EC531CC698FF00DFF571 /* favorite@2x.png in Resources */,
 				A2BF1CC01C9BE5A300B8E841 /* option@2x.png in Resources */,
 				A251954D1CAB0EBB0011EE5B /* profileImage30.png in Resources */,
+				A2A25FB21D0C8A4700C29D01 /* profile@2x.png in Resources */,
+				A2A25FB71D0C8AD000C29D01 /* lock.png in Resources */,
 				A229E0901C99D87F00DB418F /* convo.png in Resources */,
 				A2BF1CAA1C9BCFC500B8E841 /* amandabarnes.png in Resources */,
 				A2B3A05A1C96571700A4BB27 /* Assets.xcassets in Resources */,
@@ -1293,6 +1348,7 @@
 				A23917761CF7B1270048470A /* information@3x.png in Resources */,
 				A2DE01141CB9B75600065BCE /* nav@2x.png in Resources */,
 				A25195471CAB039A0011EE5B /* profileImage50.png in Resources */,
+				A2A25FB81D0C8AD000C29D01 /* lock@2x.png in Resources */,
 				A23917801CF7BC7B0048470A /* other.png in Resources */,
 				A25195491CAB039E0011EE5B /* profileImage50@2x.png in Resources */,
 				A23917001CF636000048470A /* collection@2x.png in Resources */,
@@ -1310,6 +1366,7 @@
 				A23917751CF7B1270048470A /* information@2x.png in Resources */,
 				A23917081CF639310048470A /* search.png in Resources */,
 				A256CD031CC5FD9D00B1F5A4 /* message@2x.png in Resources */,
+				A2A25FBF1D0C8BA200C29D01 /* emial@3x.png in Resources */,
 				A23917821CF7BC7B0048470A /* other@3x.png in Resources */,
 				A23916F71CF634B00048470A /* chats@2x.png in Resources */,
 				A239177B1CF7BAE80048470A /* terms@2x.png in Resources */,
@@ -1330,6 +1387,7 @@
 				A2BF1CA81C9BC34B00B8E841 /* navigation@2x.png in Resources */,
 				A20419851C9FB0DE0090C677 /* qwert.png in Resources */,
 				A298981C1CFE9A17003D9F8A /* cancel@3x.png in Resources */,
+				A2A25FBD1D0C8BA200C29D01 /* email.png in Resources */,
 				A23916F11CF634280048470A /* chat@2x.png in Resources */,
 				A23916D91CF60FF00048470A /* list@2x.png in Resources */,
 				A24FEAF71CFB7B640037944D /* more@3x.png in Resources */,
@@ -1339,6 +1397,7 @@
 				A256CCF91CC5F32A00B1F5A4 /* messages.png in Resources */,
 				A23916DA1CF60FF00048470A /* list@3x.png in Resources */,
 				A229E0A21C99D8AC00DB418F /* set.png in Resources */,
+				A2A25FB11D0C8A4700C29D01 /* profile.png in Resources */,
 				A229E0B21C99E27500DB418F /* two-round-overlapping-speech-bubbles.png in Resources */,
 				A24FEAF61CFB7B640037944D /* more@2x.png in Resources */,
 				A229E0981C99D89200DB418F /* central-alignment.png in Resources */,
@@ -1359,6 +1418,7 @@
 				A20419831C9FB06A0090C677 /* option.png in Resources */,
 				A2AF1B251D086E4700B8A38B /* emailTextField24@2x.png in Resources */,
 				A256CD0D1CC604F200B1F5A4 /* group@3x.png in Resources */,
+				A2A25FB31D0C8A4700C29D01 /* profile@3x.png in Resources */,
 				A2AF1B241D086E4700B8A38B /* emailTextField24.png in Resources */,
 				A2F04BE41CA1AF80009CBE43 /* compose@2x.png in Resources */,
 				A23917041CF636000048470A /* collections@3x.png in Resources */,
@@ -1439,10 +1499,14 @@
 			files = (
 				A239172E1CF7898C0048470A /* TermsOfService.swift in Sources */,
 				A29D8F961CF8920600A4AC65 /* Account.swift in Sources */,
+				A2369AD01D0F2AF400B34A21 /* NSDateAndCalender.swift in Sources */,
+				A2369AD21D0F49E400B34A21 /* LoadingImages.swift in Sources */,
+				A2A25FC11D0C931B00C29D01 /* deleteAccount.swift in Sources */,
 				A298980A1CFE3BCD003D9F8A /* SignInAccount.swift in Sources */,
 				A23917281CF6A6D40048470A /* searchGroupsVC.swift in Sources */,
 				A29898201D0131C9003D9F8A /* MessagesTableViewCell.swift in Sources */,
 				A298981E1D012A12003D9F8A /* MessagesTableViewController.swift in Sources */,
+				A2A25FC71D0E63AA00C29D01 /* CacheUser.swift in Sources */,
 				A2AF1B281D0873F400B8A38B /* homeScreen.swift in Sources */,
 				A298980C1CFE3BD8003D9F8A /* CreateAccount.swift in Sources */,
 				A27429011CF2C16A0056A196 /* IncomingMessage.swift in Sources */,
@@ -1450,18 +1514,22 @@
 				A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */,
 				A29898241D0311C4003D9F8A /* AgreeTermsPrivacy.swift in Sources */,
 				A27428FB1CF27D730056A196 /* SettingsTableViewController.swift in Sources */,
+				A2369AD41D0F922D00B34A21 /* RegisterUser.swift in Sources */,
 				A2B3A0671C9658C700A4BB27 /* SWRevealViewController.m in Sources */,
 				A27429051CF38DCC0056A196 /* Camera.swift in Sources */,
 				A29898221D013A9A003D9F8A /* SearchUserViewController.swift in Sources */,
 				A24FEAFB1CFB91E10037944D /* Auth.swift in Sources */,
 				A20393D71CF25F250057C70A /* Recent.swift in Sources */,
+				A2369AD61D0F980D00B34A21 /* PushNotifications.swift in Sources */,
 				A29D8F941CF8905400A4AC65 /* PrivacyPolicy.swift in Sources */,
 				A29D8F981CF8924200A4AC65 /* TermsAndPrivacy.swift in Sources */,
 				A27428FD1CF288280056A196 /* ChatViewController.swift in Sources */,
 				A2C03D5E1CF93EAF0061551C /* GroupsViewController.swift in Sources */,
 				A29D8F911CF88EED00A4AC65 /* SupportViewController.swift in Sources */,
+				A2A25FC51D0CD0E300C29D01 /* signedUp.swift in Sources */,
 				A24FEAF91CFB7D590037944D /* GroupInfoViewController.swift in Sources */,
 				A239172C1CF76A650048470A /* Avatar.swift in Sources */,
+				A2A25FC31D0CBB7800C29D01 /* forgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

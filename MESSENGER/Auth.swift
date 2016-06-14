@@ -11,6 +11,8 @@ import FirebaseDatabase
 
 class auth : UIViewController {
     
+    @IBOutlet weak var composeButton: UIBarButtonItem!
+    @IBOutlet weak var optionsButton: UIBarButtonItem!
     var firebase = FIRDatabase.database().reference()
     
     var backendless = Backendless.sharedInstance()
@@ -56,6 +58,9 @@ class auth : UIViewController {
     }
     
     override func viewDidLoad() {
+        
+        optionsButton.enabled = false
+        composeButton.enabled = false
         
         newUser = BackendlessUser()
         
@@ -311,6 +316,8 @@ class auth : UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         backendless.userService.setStayLoggedIn(true)
+        self.backendless.userService.setPersistentUser()
+        self.backendless.userService.getPersistentUser()
         
         currentUser = backendless.userService.currentUser
         
@@ -320,7 +327,7 @@ class auth : UIViewController {
             
         } else {
             
-            self.presentViewController(self.alertController!, animated: true, completion: nil)
+            self.performSegueWithIdentifier("goToCreateAccount", sender: self)
         }
     }
 }

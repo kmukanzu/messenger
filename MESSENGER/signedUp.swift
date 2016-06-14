@@ -1,8 +1,8 @@
 //
-//  SignInAccount.swift
+//  signedUp.swift
 //  MESSENGER
 //
-//  Created by Kayamba Mukanzu on 5/31/16.
+//  Created by Kayamba Mukanzu on 6/11/16.
 //  Copyright © 2016 Kayamba Mukanzu. All rights reserved.
 //
 
@@ -10,10 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-class SignInAccount : UITableViewController {
-    
-    @IBOutlet weak var profileIcon: UIImageView!
-    @IBOutlet weak var passwordIcon: UIImageView!
+class signedUp : UITableViewController {
     
     var firebase = FIRDatabase.database().reference()
     
@@ -31,28 +28,25 @@ class SignInAccount : UITableViewController {
     var universityName: String?
     var avatarImage: UIImage?
     
+    var usersEmail = String()
+    
     var signUpError : UIAlertController?
+    var emailVerificationAlert : UIAlertController?
     
-    @IBAction func cancelBarButton(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBOutlet weak var cancelButtonOutlet: UIBarButtonItem!
+    @IBOutlet weak var emailIcon: UIImageView!
+    @IBOutlet weak var passwordIcon: UIImageView!
     
     @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextFIeld: UITextField!
     
     @IBAction func signInButton(sender: AnyObject) {
         
         self.view.userInteractionEnabled = false
-        cancelButtonOutlet.enabled = false
         
-        if emailTextField != "" && passwordTextField != "" {
+        if emailTextField != "" && passwordTextFIeld != "" {
             
             self.email = emailTextField.text
-            self.password = passwordTextField.text
+            self.password = passwordTextFIeld.text
             
             self.activityIndicator.startAnimating()
             
@@ -61,26 +55,33 @@ class SignInAccount : UITableViewController {
             UIApplication.sharedApplication().registerForRemoteNotifications()
             
         } else {
-
+            
             self.activityIndicator.stopAnimating()
             presentViewController(signUpError!, animated: true, completion: nil)
             
         }
+        
     }
     
-    @IBAction func forgotPasswordButton(sender: AnyObject) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         
-        self.performSegueWithIdentifier("goToForgotPassword", sender: self)
+        self.passwordTextFIeld .becomeFirstResponder()
+        self.presentViewController(emailVerificationAlert!, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.profileIcon.image = UIImage(named: "profile.png")
+        self.emailIcon.image = UIImage(named: "email.png")
         self.passwordIcon.image = UIImage(named: "lock.png")
         
-        self.emailTextField .becomeFirstResponder()
-        passwordTextField.secureTextEntry = true
+        self.emailTextField.text = usersEmail
+        
+        self.navigationItem.hidesBackButton = true
+        
+        
+        passwordTextFIeld.secureTextEntry = true
         emailTextField.keyboardType = UIKeyboardType.EmailAddress
         emailTextField.autocorrectionType = .No
         
@@ -91,15 +92,22 @@ class SignInAccount : UITableViewController {
         
         self.activityIndicator = activityInd
         
-        signUpError = UIAlertController(title: "Sign up Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
+        signUpError = UIAlertController(title: "Sign in Error!", message: "Sign up using your university email address", preferredStyle: .Alert)
         let button = UIAlertAction(title: "Try again", style: .Cancel) { (action) -> Void in
             
             self.view.userInteractionEnabled = true
-            self.cancelButtonOutlet.enabled = true
-            
             
         }
         signUpError?.addAction(button)
+        
+        emailVerificationAlert = UIAlertController(title: "Email Verification", message: "We've sent you a confirmation email. Check your email and then proceed to Sign in.", preferredStyle: .Alert)
+        let done = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            print("OK button was pressed")
+            
+        }
+        
+        emailVerificationAlert?.addAction(done)
+        
         
     }
     

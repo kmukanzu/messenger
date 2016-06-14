@@ -16,9 +16,17 @@ class Account: UITableViewController {
     var signOutAlert : UIAlertController?
     var deleteAccountAlert : UIAlertController?
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.hidden = true
+        
+        let activityInd =  UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        let barButton = UIBarButtonItem(customView: activityInd)
+        self.navigationItem.setRightBarButtonItem(barButton, animated: true)
+        activityInd.color = UIColor.lightGrayColor()
+        
+        self.activityIndicator = activityInd
         
         signOutAlert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .Alert)
         
@@ -108,22 +116,30 @@ class Account: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             
-            self.presentViewController(signOutAlert!, animated: true, completion: nil)
+            self.logOut()
+            self.view.userInteractionEnabled = false
+            self.activityIndicator.startAnimating()
+            
+            //self.presentViewController(signOutAlert!, animated: true, completion: nil)
             
         }
         
         if indexPath.section == 0 && indexPath.row == 1 {
             print("DeleteAccount")
         
-            self.presentViewController(deleteAccountAlert!, animated: true, completion: nil)
+            self.performSegueWithIdentifier("goToDeleteAccount", sender: self)
         }
         
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func logOut() {
+        
+        removeDeviceIdFromUser()
     
         backendless.userService.logout()
+        
+        PushUserResign()
         
         let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
         self.presentViewController(homeVC, animated: false, completion: nil)

@@ -37,6 +37,7 @@ DEPENDENCIES:
   - Firebase/Database
   - IDMPhotoBrowser
   - JSQMessagesViewController
+  - SDWebImage (~> 3.8.1)
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
@@ -53,6 +54,6 @@ SPEC CHECKSUMS:
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 8f708ec5948259cd3c3df6f9ea7bb780a3cbaf31
+PODFILE CHECKSUM: e97374306dffdf98e7f07566ae9ddce917b4044a
 
 COCOAPODS: 1.0.1

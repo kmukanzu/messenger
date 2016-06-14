@@ -15,6 +15,8 @@ protocol ChooseUserDelegate {
 
 class SearchUserViewController : UITableViewController, UISearchResultsUpdating {
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     var universityID = String()
     
     var users: [BackendlessUser] = []
@@ -37,9 +39,29 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         
         return (v!.last)!
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+    }
+    
+    /*func addToCacheAsynch (user: BackendlessUser) {
+        
+        let userNames = user.name
+        
+        backendless.cache.put("name", object: userNames, response: {(var o : AnyObject!)
+    
+    }*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let activityInd =  UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        let barButton = UIBarButtonItem(customView: activityInd)
+        self.navigationItem.setLeftBarButtonItem(barButton, animated: true)
+        activityInd.color = UIColor.lightGrayColor()
+        
+        self.activityIndicator = activityInd
         
         tableView.tableFooterView = UIView()
         
@@ -58,7 +80,8 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
         definesPresentationContext = true
         
         loadUsers()
-        
+        self.activityIndicator.stopAnimating()
+
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -160,7 +183,6 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
             self.users = users.data as! [BackendlessUser]
             
             self.tableView.reloadData()
-            
             
             }) { (fault : Fault!) -> Void in
                 print("Error, couldnt retrive users: \(fault)")

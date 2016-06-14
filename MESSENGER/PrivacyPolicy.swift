@@ -30,7 +30,7 @@ class PrivacyPolicy : UIViewController {
     
     func loadAddress() {
         
-        let requestURL = NSURL (string: "http://www.universitymessenger.org/privacy/")
+        let requestURL = NSURL (string: "http://www.universitymessenger.org/privacypolicy/")
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
