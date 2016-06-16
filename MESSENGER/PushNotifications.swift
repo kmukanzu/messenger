@@ -52,7 +52,7 @@ func SendPushMessage(toUser: BackendlessUser, message: String) {
     deliveryOptions.pushPolicy(PUSH_ONLY)
     
     let publishOptions = PublishOptions()
-    publishOptions.headers = ["ios-alert" : "New message from \(backendless.userService.currentUser.name)", "ios-badge" : "1", "ios-sound" : "defauld"]
+    publishOptions.headers = ["ios-alert" : "New message from \(backendless.userService.currentUser.name)", "ios-badge" : "1", "ios-sound" : "default"]
     
     backendless.messagingService.publish("default", message: message, publishOptions: publishOptions, deliveryOptions: deliveryOptions)
 }

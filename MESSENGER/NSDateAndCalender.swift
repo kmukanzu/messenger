@@ -9,6 +9,7 @@
 import Foundation
 
 extension NSDateFormatter {
+    
     static func friendlyStringForDate(date:NSDate) -> String {
         // Fetch the default calendar
         let calendar = NSCalendar.currentCalendar()
@@ -26,7 +27,7 @@ extension NSDateFormatter {
         case 0:
             let formatter = NSDateFormatter()
             formatter.timeZone = NSTimeZone.defaultTimeZone()
-            formatter.dateFormat = "HH:mm a"
+            formatter.dateFormat = "h:mm a"
             return formatter.stringFromDate(date)
             
         case 1:

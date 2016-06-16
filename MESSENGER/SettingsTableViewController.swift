@@ -53,7 +53,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         self.tabBarController?.tabBar.hidden = true
         
-        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/4.0
+        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/2.0
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.borderWidth = 0.4
         avatarImageView.layer.borderColor = UIColor.lightGrayColor().CGColor

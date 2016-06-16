@@ -116,9 +116,9 @@ class Account: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             
-            self.logOut()
-            self.view.userInteractionEnabled = false
             self.activityIndicator.startAnimating()
+            self.view.userInteractionEnabled = false
+            self.logOut()
             
             //self.presentViewController(signOutAlert!, animated: true, completion: nil)
             

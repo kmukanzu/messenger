@@ -60,6 +60,15 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
         }
     }
     
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         var numOfSection: NSInteger = 0
@@ -73,11 +82,16 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
         } else {
             
             let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height))
-            noDataLabel.text = "You don't have any messages."
+            
+            noDataLabel.text = ""
             noDataLabel.textColor = UIColor.grayColor()
             noDataLabel.textAlignment = NSTextAlignment.Center
             self.tableView.backgroundView = noDataLabel
             
+            delay(1.0){
+            noDataLabel.text = "You don't have any messages."
+                
+            }
         }
         
         return numOfSection

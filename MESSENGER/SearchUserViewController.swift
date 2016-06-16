@@ -188,4 +188,6 @@ class SearchUserViewController : UITableViewController, UISearchResultsUpdating 
                 print("Error, couldnt retrive users: \(fault)")
         }
     }
+    
+    
 }
