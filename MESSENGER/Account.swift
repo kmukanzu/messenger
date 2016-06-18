@@ -120,6 +120,9 @@ class Account: UITableViewController {
             self.view.userInteractionEnabled = false
             self.logOut()
             
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
+            self.presentViewController(homeVC, animated: false, completion: nil)
+            
             //self.presentViewController(signOutAlert!, animated: true, completion: nil)
             
         }
@@ -141,8 +144,8 @@ class Account: UITableViewController {
         
         PushUserResign()
         
-        let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
-        self.presentViewController(homeVC, animated: false, completion: nil)
+        /*let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
+        self.presentViewController(homeVC, animated: false, completion: nil)*/
     }
     
     func AuthUser (email: String, password: String){

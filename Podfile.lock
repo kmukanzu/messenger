@@ -31,6 +31,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - IDMPhotoBrowser
   - JSQMessagesViewController
   - SDWebImage (~> 3.8.1)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
@@ -53,7 +55,8 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: e97374306dffdf98e7f07566ae9ddce917b4044a
+PODFILE CHECKSUM: d91300f3350b7b41ec53a7bdc240942378e6768f
 
 COCOAPODS: 1.0.1

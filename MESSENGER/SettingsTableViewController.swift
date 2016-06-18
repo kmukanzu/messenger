@@ -230,7 +230,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             
             
         }
-        let editImage = UIAlertAction(title: "Change Image", style: .Default) { (Alert:UIAlertAction) -> Void in
+        let editImage = UIAlertAction(title: "Edit Image", style: .Default) { (Alert:UIAlertAction) -> Void in
             print("Edit Image button was pressed")
             self.tabBarController?.tabBar.hidden = false
             

@@ -11,6 +11,9 @@ import JSQMessagesViewController
 
 class ChatViewController : JSQMessagesViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
+    @IBOutlet weak var userImage: UIBarButtonItem!
+    
     let ref = firebase.child("Message")
     //Firebase(url: "https://umessengerapp.firebaseio.com//Message")
     
@@ -42,6 +45,8 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //userImage = UIImage(named: "")
+        
         //self.collectionView!.transform = CGAffineTransformMake(1, 0, 0, -1, 0, 0)
         
         //self.title = navTitle
@@ -50,6 +55,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         /*let img = UIImage(named: "image30.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = leftBarButtonItem*/
+        
         
         
         self.senderId = backendless.userService
@@ -166,7 +172,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
         
-        if indexPath.item % 3 == 0 {
+        if indexPath.item % 4 == 0 {
             
             let message = messages[indexPath.item]
             
@@ -177,10 +183,19 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         
-        if indexPath.item % 3 == 0 {
+        if indexPath.item % 4 == 0 {
             return kJSQMessagesCollectionViewCellLabelHeightDefault
         }
         return 0.0
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
