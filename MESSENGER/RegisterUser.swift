@@ -29,5 +29,5 @@ func removeDeviceIdFromUser() {
     backendless.userService.currentUser!.updateProperties(properties)
     backendless.userService.update(backendless.userService.currentUser)
     
-    
 }
+

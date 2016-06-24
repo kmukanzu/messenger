@@ -38,7 +38,10 @@ class Account: UITableViewController {
         let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) -> Void in
             print("Yes button was pressed")
             
+            self.activityIndicator.startAnimating()
             self.logOut()
+            
+            
             
         }
         
@@ -116,14 +119,10 @@ class Account: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             
-            self.activityIndicator.startAnimating()
+            //self.activityIndicator.startAnimating()
             self.view.userInteractionEnabled = false
-            self.logOut()
             
-            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
-            self.presentViewController(homeVC, animated: false, completion: nil)
-            
-            //self.presentViewController(signOutAlert!, animated: true, completion: nil)
+            self.presentViewController(signOutAlert!, animated: true, completion: nil)
             
         }
         
@@ -144,8 +143,8 @@ class Account: UITableViewController {
         
         PushUserResign()
         
-        /*let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
-        self.presentViewController(homeVC, animated: false, completion: nil)*/
+        let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeScreen") as! UINavigationController
+        self.presentViewController(homeVC, animated: false, completion: nil)
     }
     
     func AuthUser (email: String, password: String){

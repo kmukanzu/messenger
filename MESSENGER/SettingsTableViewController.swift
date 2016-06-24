@@ -44,16 +44,16 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.tabBarController?.tabBar.hidden = true
+        //self.tabBarController?.tabBar.hidden = true
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.hidden = true
+        //self.tabBarController?.tabBar.hidden = true
         
-        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/2.0
+        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/4.0
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.borderWidth = 0.4
         avatarImageView.layer.borderColor = UIColor.lightGrayColor().CGColor
@@ -283,7 +283,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         
-        mailComposerVC.setToRecipients(["admin@universitymessenger.org"])
+        mailComposerVC.setToRecipients(["team@universitymessenger.org"])
         mailComposerVC.setSubject("Reporting an issue")
         mailComposerVC.setMessageBody("Hi Team!\n\nI would like to share the following issue(s)..\n", isHTML: false)
         

@@ -121,6 +121,7 @@
 		A256CD491CC6182D00B1F5A4 /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A256CD461CC6182D00B1F5A4 /* favorites.png */; };
 		A256CD4A1CC6182D00B1F5A4 /* favorites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A256CD471CC6182D00B1F5A4 /* favorites@2x.png */; };
 		A256CD4B1CC6182D00B1F5A4 /* favorites@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A256CD481CC6182D00B1F5A4 /* favorites@3x.png */; };
+		A26AB7E41D1865CB0058AFF4 /* IDMPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26AB7E31D1865CB0058AFF4 /* IDMPhotoBrowser.framework */; };
 		A27428FB1CF27D730056A196 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27428FA1CF27D730056A196 /* SettingsTableViewController.swift */; };
 		A27428FD1CF288280056A196 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27428FC1CF288280056A196 /* ChatViewController.swift */; };
 		A27428FF1CF2C15D0056A196 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */; };
@@ -314,6 +315,7 @@
 		A256CD461CC6182D00B1F5A4 /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
 		A256CD471CC6182D00B1F5A4 /* favorites@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites@2x.png"; sourceTree = "<group>"; };
 		A256CD481CC6182D00B1F5A4 /* favorites@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites@3x.png"; sourceTree = "<group>"; };
+		A26AB7E31D1865CB0058AFF4 /* IDMPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDMPhotoBrowser.framework; path = "Pods/../build/Debug-iphoneos/IDMPhotoBrowser/IDMPhotoBrowser.framework"; sourceTree = "<group>"; };
 		A27428FA1CF27D730056A196 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A27428FC1CF288280056A196 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A27428FE1CF2C15D0056A196 /* OutgoingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26AB7E41D1865CB0058AFF4 /* IDMPhotoBrowser.framework in Frameworks */,
 				A2AF1B1E1D04AC3A00B8A38B /* MessageUI.framework in Frameworks */,
 				A2FB85831CC5CAC800903787 /* libz.tbd in Frameworks */,
 				A2FB86591CC5CB3C00903787 /* libspeex.a in Frameworks */,
@@ -1222,6 +1225,7 @@
 		E1BF576ABEE905D6711967FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A26AB7E31D1865CB0058AFF4 /* IDMPhotoBrowser.framework */,
 				A2AF1B1D1D04AC3A00B8A38B /* MessageUI.framework */,
 				A2FB85821CC5CAC800903787 /* libz.tbd */,
 				A2FB85801CC5CAB800903787 /* libsqlite3.tbd */,
@@ -1632,15 +1636,30 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCF2D042F467519CF25399F8 /* Pods-MESSENGER.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"${PROJECT_DIR}/lib",
+				);
 				INFOPLIST_FILE = MESSENGER/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/lib/**",
+					"$(PROJECT_DIR)/lib",
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/backendless",
 					"$(PROJECT_DIR)/lib/CommLibiOS",
@@ -1654,6 +1673,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MESSENGER/MESSENGER-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1661,15 +1681,30 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EC9DE2C4EA56D6698E05155 /* Pods-MESSENGER.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"${PROJECT_DIR}/lib",
+				);
 				INFOPLIST_FILE = MESSENGER/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/lib/**",
+					"$(PROJECT_DIR)/lib",
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/backendless",
 					"$(PROJECT_DIR)/lib/CommLibiOS",
@@ -1683,6 +1718,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MESSENGER/MESSENGER-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

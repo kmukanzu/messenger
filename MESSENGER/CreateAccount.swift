@@ -64,7 +64,7 @@ class CreateAccount : UITableViewController {
         self.view.userInteractionEnabled = false
         createAccountOutlet.enabled = false
         
-        if emailTextField.text != "" && fullNameTextField.text != "" && passwordTextField.text != "" && emailTextField.text?.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text?.rangeOfString(".com") == nil {
+        if emailTextField.text != "" && fullNameTextField.text != "" && passwordTextField.text != "" && emailTextField.text?.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text?.rangeOfString(".com") == nil && emailTextField.text?.rangeOfString(".net") == nil{
             
             self.activityIndicator.startAnimating()
             

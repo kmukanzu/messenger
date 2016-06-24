@@ -22,6 +22,8 @@ class SignInAccount : UITableViewController {
     var newUser: BackendlessUser?
     var currentUser: BackendlessUser?
     
+    var userUniversityID = String()
+    
     var activityIndicator = UIActivityIndicatorView()
     
     var email: String?
@@ -32,6 +34,19 @@ class SignInAccount : UITableViewController {
     var avatarImage: UIImage?
     
     var signUpError : UIAlertController?
+    
+    func getMainPart2(s: String) -> String {
+        var v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        v?.removeLast()
+        
+        return (v!.last)!
+    }
+    
+    func getMainPart1(s: String) -> String {
+        let v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        
+        return (v!.last)!
+    }
     
     @IBAction func cancelBarButton(sender: AnyObject) {
         
@@ -49,10 +64,14 @@ class SignInAccount : UITableViewController {
         self.view.userInteractionEnabled = false
         cancelButtonOutlet.enabled = false
         
-        if emailTextField != "" && passwordTextField != "" {
+        if emailTextField != "" && passwordTextField != "" && emailTextField.text!.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text!.rangeOfString(".com") == nil {
             
             self.email = emailTextField.text
             self.password = passwordTextField.text
+            
+            let university = self.getMainPart2(emailTextField.text!)
+            let dotEdu = self.getMainPart1(emailTextField.text!)
+            self.userUniversityID = university + dotEdu
             
             self.activityIndicator.startAnimating()
             
@@ -108,6 +127,8 @@ class SignInAccount : UITableViewController {
         backendless.userService.login(email, password: password, response: { (user:BackendlessUser!) -> Void in
             
             registerUserDeviceId()
+            
+            self.firebase.child("School").child(self.userUniversityID).child("Users").child(self.backendless.userService.currentUser.objectId).setValue(["name": self.backendless.userService.currentUser.name])
             
             self.performSegueWithIdentifier("goToMessages", sender: self)
             

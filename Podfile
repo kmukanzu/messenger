@@ -8,4 +8,5 @@ target 'MESSENGER' do
 	pod 'Firebase/Database'
 	pod 'SDWebImage', '~> 3.8.1'
 	pod 'SwiftyJSON'
+	pod 'FirebaseAuth'
 end

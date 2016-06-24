@@ -43,7 +43,7 @@ class signedUp : UITableViewController {
         
         self.view.userInteractionEnabled = false
         
-        if emailTextField != "" && passwordTextFIeld != "" {
+        if emailTextField != "" && passwordTextFIeld != "" && emailTextField.text!.characters.indexOf("@") != nil && emailTextField.text!.characters.indexOf(".") != nil && emailTextField.text!.rangeOfString(".com") == nil {
             
             self.email = emailTextField.text
             self.password = passwordTextFIeld.text
@@ -52,7 +52,7 @@ class signedUp : UITableViewController {
             
             loginUser(email!, password: password!)
             
-            UIApplication.sharedApplication().registerForRemoteNotifications()
+            //UIApplication.sharedApplication().registerForRemoteNotifications()
             
         } else {
             

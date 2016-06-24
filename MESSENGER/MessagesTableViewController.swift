@@ -14,6 +14,23 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     
     var recents : [NSDictionary] = []
     
+    var universityID = String()
+    
+    var users: [BackendlessUser] = []
+    
+    func getMainPart2(s: String) -> String {
+        var v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        v?.removeLast()
+        
+        return (v!.last)!
+    }
+    
+    func getMainPart1(s: String) -> String {
+        let v = s.componentsSeparatedByString("@").last?.componentsSeparatedByString(".")
+        
+        return (v!.last)!
+    }
+    
     @IBAction func moreButton(sender: AnyObject) {
         
         //options()
@@ -148,7 +165,14 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let email = backendless.userService.currentUser.email
+        let university = self.getMainPart2(email)
+        let dotEdu = self.getMainPart1(email)
+        self.universityID = university + dotEdu
+        
         loadRecents()
+        
+        loadUsers()
         
         tableView.tableFooterView = UIView()
         
@@ -157,8 +181,7 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
     override func viewWillAppear(animated: Bool) {
         
         self.tabBarController?.tabBar.hidden = true
-        
-        
+
     }
     
     func loadRecents() {
@@ -206,5 +229,28 @@ class MessagesTableViewController : UITableViewController, ChooseUserDelegate {
         
         self.presentViewController(actionAlert, animated: true, completion: nil)
         
+    }
+    
+    func loadUsers() {
+        
+        let whereClause = "objectId != '\(backendless.userService.currentUser.objectId)' AND UniversityID = '\(self.universityID)'"
+        
+        let dataQuery = BackendlessDataQuery()
+        dataQuery.whereClause = whereClause
+        
+        let queryOptions = QueryOptions()
+        queryOptions.sortBy = ["name"]
+        dataQuery.queryOptions = queryOptions
+        
+        let dataStore = backendless.persistenceService.of(BackendlessUser.ofClass())
+        dataStore.find(dataQuery, response: { (users : BackendlessCollection!) -> Void in
+            
+            self.users = users.data as! [BackendlessUser]
+            
+            self.tableView.reloadData()
+            
+        }) { (fault : Fault!) -> Void in
+            print("Error, couldnt retrive users: \(fault)")
+        }
     }
 }

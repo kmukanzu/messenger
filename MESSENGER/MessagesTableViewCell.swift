@@ -22,7 +22,7 @@ class MessagesTableViewCell : UITableViewCell {
     
     func bindData(recent: NSDictionary){
         
-        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/2.0
+        avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame)/4.0
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.borderWidth = 0.2
         avatarImageView.layer.borderColor = UIColor.lightGrayColor().CGColor
@@ -51,6 +51,7 @@ class MessagesTableViewCell : UITableViewCell {
                 getImageFromURL(avatarURL as! String, result: { (image) -> Void in
                     
                     self.avatarImageView.image = image
+                   
                 })
             }
             

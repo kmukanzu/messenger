@@ -320,7 +320,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
         
         //if text message
         if let text = text {
-            outgoingMessage = OutgoingMessage(message: text, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Delivered", type: "text")
+            outgoingMessage = OutgoingMessage(message: text, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Sent", type: "text")
         }
         
         //send picture message
@@ -328,7 +328,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
             
             let imageData = UIImageJPEGRepresentation(pic, 1.0)
             
-            outgoingMessage = OutgoingMessage(message: "Picture", pictureData: imageData!, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Delivered", type: "picture")
+            outgoingMessage = OutgoingMessage(message: "Picture", pictureData: imageData!, senderId: backendless.userService.currentUser.objectId!, senderName: backendless.userService.currentUser.name!, date: date, status: "Sent", type: "picture")
         }
         
         
@@ -430,7 +430,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
     
     //MARK: JSQDelegate functions
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!) {
+    /*override func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!) {
         
         let object = objects[indexPath.row]
         
@@ -451,7 +451,7 @@ class ChatViewController : JSQMessagesViewController, UINavigationControllerDele
             self.performSegueWithIdentifier("chatToMapSeg", sender: indexPath)
         }
         
-    }
+    }*/
     
     //MARK: UIIMagePickerController functions
     
